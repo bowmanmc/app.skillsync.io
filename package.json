@@ -1,41 +1,41 @@
 {
-    "name": "app.skillsync.io",
-    "version": "1.0.0",
-    "description": "",
-    "scripts": {
-        "clean": "rimraf \"src/styles/*\" \"src/scripts/*\"",
-        "js": "webpack -d --progress --colors",
-        "sass": "node-sass --include-path src/sass --include-path node_modules/bootstrap-sass/assets/stylesheets --include-path node_modules/bootstrap-slider/dist/css --include-path node_modules/font-awesome/scss src/sass/main.scss src/styles/site.css",
-        "postsass": "postcss -r -c postcss.config.json src/styles/site.css && cssmin src/styles/site.css > src/styles/site.min.css",
-        "start": "npm run clean && npm run js && parallelshell \"browser-sync start --config bs-config.js\" \"npm run watch\"",
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "watch": "parallelshell \"npm run watch:sass\" \"npm run watch:js\"",
-        "watch:js": "webpack -d --progress --colors --watch",
-        "watch:sass": "nodemon -e scss -w src/sass -x \"npm run sass\""
-    },
-    "dependencies": {
-        "angular": "^1.4.9",
-        "angular-animate": "^1.4.9",
-        "angular-cookies": "^1.4.9",
-        "angular-resource": "^1.4.9",
-        "angular-route": "^1.4.9",
-        "angular-sanitize": "^1.4.9",
-        "jquery": "^2.1.4",
-        "moment": "^2.10.6"
-    },
-    "devDependencies": {
-        "autoprefixer": "^6.0.3",
-        "babel-core": "^5.8.25",
-        "babel-loader": "^5.3.2",
-        "browser-sync": "*",
-        "cssmin": "^0.4.3",
-        "http-proxy-middleware": "^0.9.0",
-        "node-sass": "^3.3.3",
-        "nodemon": "^1.7.2",
-        "parallelshell": "^2.0.0",
-        "postcss-cli": "^2.2.0",
-        "rimraf": "^2.4.3",
-        "script-loader": "^0.6.1",
-        "webpack": "^1.12.2"
-    }
+  "name": "skillsync",
+  "version": "1.0.0",
+  "description": "SkillSync application",
+  "private": true,
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "ember build",
+    "start": "ember server",
+    "test": "ember test"
+  },
+  "repository": "",
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "broccoli-asset-rev": "^2.2.0",
+    "broccoli-sass": "^0.7.0",
+    "ember-ajax": "0.7.1",
+    "ember-cli": "2.3.0-beta.1",
+    "ember-cli-app-version": "^1.0.0",
+    "ember-cli-babel": "^5.1.5",
+    "ember-cli-dependency-checker": "^1.2.0",
+    "ember-cli-htmlbars": "^1.0.1",
+    "ember-cli-htmlbars-inline-precompile": "^0.3.1",
+    "ember-cli-inject-live-reload": "^1.3.1",
+    "ember-cli-qunit": "^1.2.1",
+    "ember-cli-release": "0.2.8",
+    "ember-cli-sri": "^2.0.0",
+    "ember-cli-uglify": "^1.2.0",
+    "ember-data": "^2.3.0",
+    "ember-disable-proxy-controllers": "^1.0.1",
+    "ember-export-application-global": "^1.0.4",
+    "ember-resolver": "^2.0.3"
+  }
 }

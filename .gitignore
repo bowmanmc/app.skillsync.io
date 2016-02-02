@@ -1,17 +1,17 @@
-node_modules
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/tmp
+
+# dependencies
+/node_modules
+/bower_components
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
 npm-debug.log
-build
-dist
-bower_components/
-reports
-*.swp
-.idea/
-.idea/workspace.xml
-.tmp
-.sass-cache
-.DS_Store
-
-src/scripts/site*
-src/styles/site*
-
-aws.json
+testem.log
