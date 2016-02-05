@@ -23,7 +23,17 @@ $signin-max-width: 768px;
     margin-bottom: 1.5em;
 
     img {
-        height: 48px;
+        height: 72px;
+
+        @include media($tablet-portrait) {
+            height: 72px;
+        }
+        @include media ($tablet-landscape) {
+            height: 128px;
+        }
+        @include media ($desktop) {
+            height: 128px;
+        }
     }
 }
 
