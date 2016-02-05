@@ -4,3 +4,8 @@
 @import 'reset/reset';
 @import 'bourbon/bourbon';
 @import 'neat/neat';
+
+@import 'defaults/colors',
+        'defaults/media',
+        'defaults/tags'
+;
