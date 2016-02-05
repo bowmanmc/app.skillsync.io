@@ -1,4 +1,17 @@
 
 body {
-    background: $color-teal;
+    background: $color-dark-teal;
+    font-family: $heading-stack;
+}
+
+a {
+    color: $color-dark-teal;
+    text-decoration: none;
+
+    &:hover {
+        color: $color-teal;
+    }
+    &:active {
+        color: $color-teal;
+    }
 }
