@@ -2,7 +2,7 @@
 
 module.exports = function(ngModule) {
 
-    ngModule.controller('ssSigninPageController', function($scope) {
+    ngModule.controller('ssSigninPageController', function($location, $scope, AccountApi, AuthTokenService) {
 
         $scope.checkAuth = function() {
             var email = $scope.input.email;
@@ -24,11 +24,20 @@ module.exports = function(ngModule) {
             }
 
             // Let's check the email/password at the server and get a token
-            console.log('Signing in with ' + email + '/"' + password + '"...');
+            AccountApi.authenticate(email, password).then(function(result) {
+                if (!result.data.token) {
+                    // display the error message (should only get one back)
+                    $scope.errors.push(result.data.message);
+                }
+                else {
+                    // store the token and go back to the dashboard
+                    AuthTokenService.setToken(result.data.token);
+                    $location.path('/');
+                }
+            });
         };
 
         var initialize = function() {
-            console.log('ssSigninPageController initializing...');
             $scope.errors = [];
             $scope.input = {};
         };

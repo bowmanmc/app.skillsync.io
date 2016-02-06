@@ -11,6 +11,7 @@ import ngCookies from 'angular-cookies';
 import ngResource from 'angular-resource';
 import ngRoute from 'angular-route';
 import ngSanitize from 'angular-sanitize';
+require('angular-jwt');
 
 
 // Application
@@ -19,7 +20,8 @@ var app = angular.module('ss', [
     ngCookies,
     ngResource,
     ngRoute,
-    ngSanitize
+    ngSanitize,
+    'angular-jwt'
 ]);
 
 // Load Application Components
@@ -27,3 +29,4 @@ require('./api')(app);
 require('./components')(app);
 require('./pages')(app);
 require('./routing')(app);
+require('./services')(app);

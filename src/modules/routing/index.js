@@ -17,7 +17,7 @@ module.exports = function(ngModule) {
         });
 
         // use the HTML5 History API
-        $locationProvider.html5Mode(true);
+        //$locationProvider.html5Mode(true);
     });
 
 };
