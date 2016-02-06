@@ -27,7 +27,7 @@ input[type="password"]:focus, input[type="password"]:hover {
     color: $color-txt;
 }
 
-input[type="submit"] {
+input[type="submit"], button {
     -webkit-appearance: none;
     -moz-appearance: none;
 
@@ -45,7 +45,7 @@ input[type="submit"] {
     transition: $forms-transition;
 }
 
-input[type="submit"]:focus, input[type="submit"]:hover {
+input[type="submit"]:focus, input[type="submit"]:hover, button:focus, button:hover {
     border: $forms-border-size solid $color-light-green;
     color: #fff;
     text-shadow: 1px 1px 1px darken($color-dark-green, 5%);

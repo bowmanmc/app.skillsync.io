@@ -9,15 +9,23 @@
 
         <h1>Sign in</h1>
 
-        <input type="email" placeholder="Email Address" required />
+        {{input type="email" placeholder="Email Address" value=email }}
 
-        <input type="password" placeholder="Password" required />
+        {{input type="password" placeholder="Password" value=password }}
 
         <div class="signin__form-buttons">
-            <input type="submit" value="Sign in" />
+            <button {{action 'checkAuth'}}>Sign in</button>
         </div>
 
-        <div class="siginin_form-links">
+        {{#if errors}}
+            <ul class="signin__form-errors">
+                {{#each errors as |error|}}
+                    <li>* {{error}}</li>
+                {{/each}}
+            </ul>
+        {{/if}}
+
+        <div class="siginin__form-links">
             <a href="/account/reset">Reset Password</a> |
             <a href="/account/register">Register</a>
         </div>
