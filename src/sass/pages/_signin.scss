@@ -1,14 +1,71 @@
 
-.signin {
+$signin-max-width: 768px;
 
-    background-color: $color-light-teal;
+.signin {
+    padding: 2.0em 1.0em;
     text-align: center;
 
-    .logo {
+    @include outer-container(90%);
 
-        img {
-            height: 67px;
+    @include media($tablet-portrait) {
+        @include outer-container($signin-max-width);
+    }
+    @include media ($tablet-landscape) {
+        @include outer-container($signin-max-width);
+    }
+    @include media ($desktop) {
+        @include outer-container($signin-max-width);
+    }
+}
+
+.signin__logo {
+
+    margin-bottom: 1.5em;
+
+    img {
+        height: 72px;
+
+        @include media($tablet-portrait) {
+            height: 72px;
+        }
+        @include media ($tablet-landscape) {
+            height: 128px;
+        }
+        @include media ($desktop) {
+            height: 128px;
         }
     }
+}
 
+
+.signin__form {
+
+    border-radius: 0.5em;
+    box-shadow: 0 0 1.0em #333;
+    padding: 1.5em 1.0em;
+
+    @include linear-gradient(to bottom, $color-light-grey, darken($color-light-grey, 10%));
+
+    h1 {
+        border-bottom: 1px solid darken($color-light-grey, 10%);
+        font-size: 2.5em;
+        margin-bottom: 0.75em;
+        text-align: left;
+    }
+}
+.signin__form-buttons {
+    margin: 1.5em auto;
+}
+.signin__form-errors {
+    background: lighten($color-light-grey, 10%);
+    border: 1px solid #f00;
+    border-radius: 0.25em;
+    color: #f00;
+    margin: 1.0em 0;
+    padding: 1.0em;
+    text-align: left;
+
+    li {
+        margin-bottom: 0.5em;
+    }
 }
