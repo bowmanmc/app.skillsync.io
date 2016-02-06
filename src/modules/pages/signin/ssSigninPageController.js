@@ -2,7 +2,7 @@
 
 module.exports = function(ngModule) {
 
-    ngModule.controller('ssSigninPageController', function($location, $scope, AccountApi, AuthTokenService) {
+    ngModule.controller('ssSigninPageController', function($location, $scope, AccountApi, AuthService) {
 
         $scope.checkAuth = function() {
             var email = $scope.input.email;
@@ -31,7 +31,7 @@ module.exports = function(ngModule) {
                 }
                 else {
                     // store the token and go back to the dashboard
-                    AuthTokenService.setToken(result.data.token);
+                    AuthService.setToken(result.data.token);
                     $location.path('/');
                 }
             });

@@ -2,7 +2,14 @@
 
 module.exports = function(ngModule) {
 
-    ngModule.config(function($routeProvider, $locationProvider) {
+    ngModule.config(function($httpProvider, jwtInterceptorProvider) {
+        jwtInterceptorProvider.tokenGetter = ['AuthService', function(AuthService) {
+            return AuthService.getToken();
+        }];
+        $httpProvider.interceptors.push('jwtInterceptor');
+    });
+
+    ngModule.config(function($routeProvider) {
         $routeProvider
         .when('/', {
              controller: 'ssMainPageController',

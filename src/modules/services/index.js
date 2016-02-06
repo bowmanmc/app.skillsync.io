@@ -2,7 +2,7 @@
 
 module.exports = function(ngModule) {
 
-    require('./AuthTokenService')(ngModule);
+    require('./AuthService')(ngModule);
     require('./LocalStorageService')(ngModule);
 
 };

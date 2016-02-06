@@ -1,5 +1,7 @@
-<div class="navbar">
+<div class="navbar" ng-show="AuthService.token">
     <p>
-        navbar
+        navbar - {{ AuthService.account.name }}
     </p>
+
+    <a ng-click="signout">Sign Out</a>
 </div>
