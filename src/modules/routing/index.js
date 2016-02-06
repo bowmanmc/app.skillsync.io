@@ -2,7 +2,7 @@
 
 module.exports = function(ngModule) {
 
-    ngModule.config(function($routeProvider) {
+    ngModule.config(function($routeProvider, $locationProvider) {
         $routeProvider
         .when('/', {
              controller: 'ssMainPageController',
@@ -15,6 +15,9 @@ module.exports = function(ngModule) {
         .otherwise({
             redirectTo: '/'
         });
+
+        // use the HTML5 History API
+        $locationProvider.html5Mode(true);
     });
 
 };
