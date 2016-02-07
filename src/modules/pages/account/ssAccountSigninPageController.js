@@ -2,7 +2,7 @@
 
 module.exports = function(ngModule) {
 
-    ngModule.controller('ssSigninPageController', function($location, $scope, AccountApi, AuthService) {
+    ngModule.controller('ssAccountSigninPageController', function($location, $scope, AccountApi, AuthService) {
 
         $scope.checkAuth = function() {
             var email = $scope.input.email;

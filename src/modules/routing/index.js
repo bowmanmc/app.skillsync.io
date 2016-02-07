@@ -15,9 +15,13 @@ module.exports = function(ngModule) {
              controller: 'ssMainPageController',
             templateUrl: 'modules/pages/main/ssMainPageTemplate.html'
         })
-        .when('/signin', {
-             controller: 'ssSigninPageController',
-            templateUrl: 'modules/pages/signin/ssSigninPageTemplate.html'
+        .when('/account/signin', {
+             controller: 'ssAccountSigninPageController',
+            templateUrl: 'modules/pages/account/ssAccountSigninPageTemplate.html'
+        })
+        .when('/account/register', {
+             controller: 'ssAccountRegisterPageController',
+            templateUrl: 'modules/pages/account/ssAccountRegisterPageTemplate.html'
         })
         .otherwise({
             redirectTo: '/'
