@@ -10,11 +10,26 @@
 
         <form ng-submit="registerAccount()">
 
-            <input type="text" placeholder="Name" ng-model="input.name" />
+            <label>
+                <input type="text" placeholder="Name"
+                    ng-model="input.name"
+                    ng-class="{'populated': input.name.length > 0}" />
+                <span>Name</span>
+            </label>
 
-            <input type="email" placeholder="Email Address" ng-model="input.email" />
+            <label>
+                <input type="email" placeholder="Email Address"
+                    ng-model="input.email"
+                    ng-class="{'populated': input.email.length > 0}" />
+                <span>Email Address</span>
+            </label>
 
-            <input type="password" placeholder="Password" ng-model="input.password" />
+            <label>
+                <input type="password" placeholder="Password"
+                    ng-model="input.password"
+                    ng-class="{'populated': input.password.length > 0}" />
+                <span>Password</span>
+            </label>
 
             <div class="contentbox__form-buttons">
                 <input type="submit" value="Register Account" />

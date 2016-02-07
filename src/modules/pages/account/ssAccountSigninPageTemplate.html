@@ -9,8 +9,21 @@
         <h1>Sign in</h1>
 
         <form ng-submit="checkAuth()">
-            <input type="email" placeholder="Email Address" ng-model="input.email" />
-            <input type="password" placeholder="Password" ng-model="input.password" />
+
+            <label>
+                <input type="email" placeholder="Email Address"
+                    ng-model="input.email"
+                    ng-class="{'populated': input.email.length > 0}" />
+                <span>Email Address</span>
+            </label>
+
+            <label>
+                <input type="password" placeholder="Password"
+                    ng-model="input.password"
+                    ng-class="{'populated': input.password.length > 0}" />
+                <span>Password</span>
+            </label>
+
             <div class="contentbox__form-buttons">
                 <input type="submit" value="Sign in" />
             </div>
