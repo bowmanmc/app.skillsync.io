@@ -20,6 +20,7 @@
             <label>
                 <input type="email" placeholder="Email Address"
                     ng-model="input.email"
+                    ng-blur="checkEmailInput()"
                     ng-class="{'populated': input.email.length > 0}" />
                 <span>Email Address</span>
             </label>
@@ -32,7 +33,15 @@
             </label>
 
             <div class="contentbox__form-buttons">
-                <input type="submit" value="Register Account" />
+                <!-- input type="submit" value="Register Account" / -->
+                <button type="submit" ng-disabled="isSaving">
+                    <span ng-show="isSaving">
+                        <svg class="form__button-icon spinner">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-spinner2"></use>
+                        </svg>
+                    </span>
+                    <span ng-hide="isSaving">Register Account</span>
+                </button>
             </div>
         </form>
 

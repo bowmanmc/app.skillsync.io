@@ -37,6 +37,36 @@ module.exports = function(ngModule) {
             });
             return deferred.promise;
         };
+
+        this.checkIfEmailIsRegistered = function(email) {
+            var deferred = $q.defer();
+            var url = '/api/account/registered';
+            $http.post(url, {
+                email: email
+            }).then(function(response) {
+                // success status code - we have an answer
+                deferred.resolve(response.data.registered);
+            }, function() {
+                // error status code
+                deferred.resolve(false);
+            });
+            return deferred.promise;
+        };
+
+        this.registerNewAccount = function(accountData) {
+            var deferred = $q.defer();
+
+            var url = '/api/account';
+            $http.post(url, accountData).then(function(response) {
+                // success status code
+                deferred.resolve(response.data);
+            }, function(response) {
+                // error status code
+                deferred.resolve(response.data);
+            });
+
+            return deferred.promise;
+        };
     });
 
 };
