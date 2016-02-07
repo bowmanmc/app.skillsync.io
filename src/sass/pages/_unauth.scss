@@ -1,0 +1,40 @@
+
+$unauth-max-width: 768px;
+
+.unauth {
+    padding: 2.0em 1.0em;
+    text-align: center;
+
+    @include outer-container(90%);
+
+    @include media($tablet-portrait) {
+        @include outer-container($unauth-max-width);
+    }
+    @include media ($tablet-landscape) {
+        @include outer-container($unauth-max-width);
+    }
+    @include media ($desktop) {
+        @include outer-container($unauth-max-width);
+    }
+}
+
+.unauth__logo {
+
+    margin-bottom: 1.5em;
+
+    img {
+        height: 72px;
+
+        @include media($tablet-portrait) {
+            height: 72px;
+        }
+        @include media ($tablet-landscape) {
+            height: 128px;
+        }
+        @include media ($desktop) {
+            height: 128px;
+        }
+    }
+}
+
+// see components/_contentbox.scss

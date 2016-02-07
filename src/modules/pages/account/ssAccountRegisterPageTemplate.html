@@ -1,14 +1,34 @@
-<div class="signin">
+<div class="unauth">
 
-    <div class="signin__logo">
+    <div class="unauth__logo">
         <img src="/images/logo-128-text.png" alt="SkillSync" />
     </div>
 
-    <div class="signin__form">
+    <div class="contentbox">
 
         <h1>Register</h1>
 
+        <form ng-submit="registerAccount()">
 
+            <input type="text" placeholder="Name" ng-model="input.name" />
+
+            <input type="email" placeholder="Email Address" ng-model="input.email" />
+
+            <input type="password" placeholder="Password" ng-model="input.password" />
+
+            <div class="contentbox__form-buttons">
+                <input type="submit" value="Register Account" />
+            </div>
+        </form>
+
+        <ul class="contentbox__form-errors" ng-show="errors.length">
+            <li ng-repeat="error in errors">* {{error}}</li>
+        </ul>
+
+        <div class="contentbox__form-links">
+            <a ng-href="#/account/reset">Reset Password</a> |
+            <a ng-href="#/account/signin">Sign In</a>
+        </div>
     </div>
 
 </div>
