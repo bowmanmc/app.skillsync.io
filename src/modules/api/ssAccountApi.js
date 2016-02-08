@@ -67,6 +67,21 @@ module.exports = function(ngModule) {
 
             return deferred.promise;
         };
+
+        this.invalidateSession = function(accountId) {
+            var deferred = $q.defer();
+
+            var url = '/api/account/signout';
+            $http.post(url, {
+                account: accountId
+            }).then(function(response) {
+                deferred.resolve(response.data);
+            }, function(response) {
+                deferred.resolve(response.data);
+            });
+
+            return deferred.promise;
+        };
     });
 
 };

@@ -8,6 +8,20 @@ module.exports = function(ngModule) {
         this.token = null;
         this.account = null;
 
+        this.signOut = function() {
+
+            // call out to the server to clear the session
+            var accountId = this.getAccountId();
+            AccountApi.invalidateSession(accountId);
+
+            // delete our token from local storage
+            LocalStorageService.remove(TOKEN_KEY);
+
+            // update our saved models
+            this.token = null;
+            this.account = null;
+        };
+
         this.loadAccount = function() {
             var svc = this;
 
