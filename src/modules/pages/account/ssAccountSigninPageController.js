@@ -23,16 +23,19 @@ module.exports = function(ngModule) {
                 return;
             }
 
+            $scope.isSigningIn = true;
             // Let's check the email/password at the server and get a token
             AccountApi.authenticate(email, password).then(function(result) {
                 if (!result.data.token) {
                     // display the error message (should only get one back)
                     $scope.errors.push(result.data.message);
+                    $scope.isSigningIn = false;
                 }
                 else {
                     // store the token and go back to the dashboard
                     AuthService.setToken(result.data.token);
                     $location.path('/');
+                    $scope.isSigningIn = false;
                 }
             });
         };
@@ -40,6 +43,7 @@ module.exports = function(ngModule) {
         var initialize = function() {
             $scope.errors = [];
             $scope.input = {};
+            $scope.isSigningIn = false;
         };
         initialize();
     });

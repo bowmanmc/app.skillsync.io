@@ -25,7 +25,14 @@
             </label>
 
             <div class="contentbox__form-buttons">
-                <input type="submit" value="Sign in" />
+                <button type="submit" ng-disabled="isSigningIn">
+                    <span ng-show="isSigningIn">
+                        <svg class="form__button-icon spinner">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-spinner2"></use>
+                        </svg>
+                    </span>
+                    <span ng-hide="isSigningIn">Sign In</span>
+                </button>
             </div>
         </form>
 
