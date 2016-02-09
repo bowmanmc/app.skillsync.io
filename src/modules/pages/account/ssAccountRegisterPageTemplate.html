@@ -1,57 +1,59 @@
-<div class="unauth">
+<div class="page color">
+    <div class="unauth">
 
-    <div class="unauth__logo">
-        <img src="/images/logo-128-text.png" alt="SkillSync" />
-    </div>
-
-    <div class="contentbox">
-
-        <h1>Register</h1>
-
-        <form ng-submit="registerAccount()">
-
-            <label>
-                <input type="text" placeholder="Name"
-                    ng-model="input.name"
-                    ng-class="{'populated': input.name.length > 0}" />
-                <span>Name</span>
-            </label>
-
-            <label>
-                <input type="email" placeholder="Email Address"
-                    ng-model="input.email"
-                    ng-blur="checkEmailInput()"
-                    ng-class="{'populated': input.email.length > 0}" />
-                <span>Email Address</span>
-            </label>
-
-            <label>
-                <input type="password" placeholder="Password"
-                    ng-model="input.password"
-                    ng-class="{'populated': input.password.length > 0}" />
-                <span>Password</span>
-            </label>
-
-            <div class="contentbox__form-buttons">
-                <button type="submit" ng-disabled="isSaving">
-                    <span ng-show="isSaving">
-                        <svg class="form__button-icon spinner">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-spinner2"></use>
-                        </svg>
-                    </span>
-                    <span ng-hide="isSaving">Register Account</span>
-                </button>
-            </div>
-        </form>
-
-        <ul class="contentbox__form-errors" ng-show="errors.length">
-            <li ng-repeat="error in errors">* {{error}}</li>
-        </ul>
-
-        <div class="contentbox__form-links">
-            <a ng-href="#/account/reset">Reset Password</a> |
-            <a ng-href="#/account/signin">Sign In</a>
+        <div class="unauth__logo">
+            <img src="/images/logo-128-text.png" alt="SkillSync" />
         </div>
-    </div>
 
+        <div class="contentbox">
+
+            <h1>Register</h1>
+
+            <form ng-submit="registerAccount()">
+
+                <label>
+                    <input type="text" placeholder="Name"
+                        ng-model="input.name"
+                        ng-class="{'populated': input.name.length > 0}" />
+                    <span>Name</span>
+                </label>
+
+                <label>
+                    <input type="email" placeholder="Email Address"
+                        ng-model="input.email"
+                        ng-blur="checkEmailInput()"
+                        ng-class="{'populated': input.email.length > 0}" />
+                    <span>Email Address</span>
+                </label>
+
+                <label>
+                    <input type="password" placeholder="Password"
+                        ng-model="input.password"
+                        ng-class="{'populated': input.password.length > 0}" />
+                    <span>Password</span>
+                </label>
+
+                <div class="contentbox__form-buttons">
+                    <button type="submit" ng-disabled="isSaving">
+                        <span ng-show="isSaving">
+                            <svg class="form__button-icon spinner">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-spinner2"></use>
+                            </svg>
+                        </span>
+                        <span ng-hide="isSaving">Register Account</span>
+                    </button>
+                </div>
+            </form>
+
+            <ul class="contentbox__form-errors" ng-show="errors.length">
+                <li ng-repeat="error in errors">* {{error}}</li>
+            </ul>
+
+            <div class="contentbox__form-links">
+                <a ng-href="#/account/reset">Reset Password</a> |
+                <a ng-href="#/account/signin">Sign In</a>
+            </div>
+        </div>
+
+    </div>
 </div>

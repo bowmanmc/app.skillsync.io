@@ -1,13 +1,43 @@
-<div class="signin">
+<div class="page color">
+    <div class="unauth">
 
-    <div class="signin__logo">
-        <img src="/images/logo-128-text.png" alt="SkillSync" />
+        <div class="unauth__logo">
+            <img src="/images/logo-128-text.png" alt="SkillSync" />
+        </div>
+
+        <div class="contentbox">
+
+            <h1>Reset Password</h1>
+
+            <form ng-submit="resetPassword()">
+
+                <label>
+                    <input type="email" placeholder="Email Address"
+                        ng-model="input.email"
+                        ng-class="{'populated': input.email.length > 0}" />
+                    <span>Email Address</span>
+                </label>
+
+                <div class="contentbox__form-buttons">
+                    <button type="submit" ng-disabled="isResetting">
+                        <span ng-show="isResetting">
+                            <svg class="form__button-icon spinner">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-spinner2"></use>
+                            </svg>
+                        </span>
+                        <span ng-hide="isResetting">Reset Password</span>
+                    </button>
+                </div>
+            </form>
+
+            <ul class="contentbox__form-errors" ng-show="errors.length">
+                <li ng-repeat="error in errors">* {{error}}</li>
+            </ul>
+
+            <div class="contentbox__form-links">
+                <a ng-href="#/account/register">Register</a> |
+                <a ng-href="#/account/signin">Sign In</a>
+            </div>
+        </div>
     </div>
-
-    <div class="signin__form">
-
-        <h1>Reset Password</h1>
-
-    </div>
-
 </div>

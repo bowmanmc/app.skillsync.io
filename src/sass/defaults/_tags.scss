@@ -1,7 +1,13 @@
 
+html, body {
+    height: 100%;
+    min-height: 100%;
+}
+
 body {
-    background: $color-dark-teal;
     font-family: $heading-stack;
+
+    @include linear-gradient(to bottom, $color-light-grey, darken($color-light-grey, 10%));
 }
 
 a {
