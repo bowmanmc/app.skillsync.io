@@ -33,7 +33,11 @@ module.exports = function(ngModule) {
              controller: 'ssAccountSigninPageController',
             templateUrl: 'modules/pages/account/ssAccountSigninPageTemplate.html'
         })
-
+        // Resume Pages
+        .when('/resume', {
+             controller: 'ssResumePageController',
+            templateUrl: 'modules/pages/resume/ssResumePageTemplate.html'
+        })
         .otherwise({
             redirectTo: '/'
         });
