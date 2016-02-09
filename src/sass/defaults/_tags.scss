@@ -5,13 +5,13 @@ html, body {
 }
 
 body {
+    background: $color-light-grey;
     font-family: $heading-stack;
-
-    @include linear-gradient(to bottom, $color-light-grey, darken($color-light-grey, 10%));
 }
 
 a {
     color: $color-dark-teal;
+    cursor: pointer;
     text-decoration: none;
 
     &:hover {

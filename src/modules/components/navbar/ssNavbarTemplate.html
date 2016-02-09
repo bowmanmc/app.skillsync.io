@@ -1,7 +1,20 @@
 <div class="navbar" ng-show="AuthService.token">
-    <p>
-        navbar - {{ AuthService.account.name }}
-    </p>
+
+    <div class="navbar__logo">
+        <img src="/images/logo-128x128.png" alt="SkillSync" />
+    </div>
+
+
+    <ul>
+        <li class="navbar__link navbar__link-selected">
+            <a ng-click="goto('/')">
+                <svg class="navbar__link-icon">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-libreoffice"></use>
+                </svg>
+                <span class="navbar__link-txt">Resume</span>
+            </a>
+        </li>
+    </ul>
 
     <a ng-click="AuthService.signOut()">Sign Out</a>
 </div>

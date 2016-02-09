@@ -1,6 +1,43 @@
 .navbar {
-    background: $color-txt;
-    color: $color-light-grey;
-    padding: 0.5em 0.75em;
-    width: 100%;
+    background: darken($color-light-grey, 7%);
+    color: $color-txt;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 64px;
+    z-index: 10;
+}
+
+$navbar-link-radius: 0.25em;
+.navbar__link {
+    display: block;
+    margin: 0.5em 0;
+    margin-left: 7px;
+    padding: 1.0em;
+    text-align: center;
+}
+.navbar__link-selected {
+    background: $color-light-grey;
+    border-top-left-radius: $navbar-link-radius;
+    border-bottom-left-radius: $navbar-link-radius;
+}
+
+.navbar__link-icon {
+    fill: $color-txt;
+    height: 24px;
+    width: 24px;
+}
+.navbar__link-txt {
+    display: none;
+    font-size: 12px;
+}
+
+.navbar__logo {
+    margin-top: 1.0em;
+    img {
+        height: 32px;
+        width: 32px;
+    }
 }
