@@ -49,48 +49,12 @@ $forms-transition: all 0.3s ease-in-out;
     text-shadow: 1px 1px 1px darken($color-dark-green, 5%);
 }
 
+textarea {
+    resize: none;
+}
+
 .form__button-icon {
     fill: $color-light;
     height: modular-scale(1);
     width: modular-scale(1);
-}
-
-// Modified Peeky Placeholders by Luke Reid
-// http://codepen.io/lukeandrewreid/pen/OVPGXN
-form {
-    label {
-        position: relative;
-        display: block;
-
-        input {
-
-            &::placeholder {
-                transition: $forms-transition;
-            }
-
-            &:focus, &.populated {
-                padding-top: 28px;
-
-                &::placeholder {
-                    color: transparent;
-                }
-
-                & + span {
-                    opacity: 1;
-                    top: 10px;
-                }
-            }
-        }
-
-        span {
-            color: $color-txt-light;
-            font-size: 12px;
-            font-weight: bold;
-            position: absolute;
-            top: 0px;
-            left: 1.0em;
-            opacity: 0;
-            transition: $forms-transition;
-        }
-    }
 }

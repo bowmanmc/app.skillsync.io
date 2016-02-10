@@ -1,0 +1,29 @@
+
+.resume__nav {
+
+    background: darken($color-light-grey, 3%);
+    border-radius: 0.25em;
+    margin-bottom: 1.5em;
+
+    ul {
+
+    }
+
+    li {
+        display: inline-block;
+        padding: 0.5em 1.0em;
+    }
+}
+
+.resume__form {
+
+    legend {
+        color: $color-dark-teal;
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+}
