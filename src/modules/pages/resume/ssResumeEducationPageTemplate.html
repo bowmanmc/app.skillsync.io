@@ -1,0 +1,29 @@
+<div class="resumepage page app-page">
+
+    <ss-resume-navbar></ss-resume-navbar>
+
+    <form class="resume__form">
+        <fieldset>
+            <legend>Education &amp; Certifications</legend>
+            <p>
+                Please list your education and certifications
+            </p>
+            <input type="number"
+                class="resume__form-years"
+                placeholder="0"
+                ng-model="input.years"
+                ng-class="{'populated': input.years}" />
+        </fieldset>
+
+        <button type="submit" ng-disabled="isSaving" ng-show2="hasChanges">
+            <span ng-show="isSaving">
+                <svg class="form__button-icon spinner">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-spinner2"></use>
+                </svg>
+            </span>
+            <span ng-hide="isSaving">Save Changes</span>
+        </button>
+
+    </form>
+
+</div><!-- mainpage -->

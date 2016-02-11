@@ -38,9 +38,17 @@ module.exports = function(ngModule) {
              controller: 'ssResumePageController',
             templateUrl: 'modules/pages/resume/ssResumePageTemplate.html'
         })
+        .when('/resume/education', {
+             controller: 'ssResumeEducationPageController',
+            templateUrl: 'modules/pages/resume/ssResumeEducationPageTemplate.html'
+        })
         .when('/resume/skills', {
              controller: 'ssResumeSkillsPageController',
             templateUrl: 'modules/pages/resume/ssResumeSkillsPageTemplate.html'
+        })
+        .when('/resume/work', {
+             controller: 'ssResumeWorkPageController',
+            templateUrl: 'modules/pages/resume/ssResumeWorkPageTemplate.html'
         })
         .otherwise({
             redirectTo: '/'
