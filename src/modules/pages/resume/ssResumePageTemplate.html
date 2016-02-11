@@ -1,13 +1,6 @@
 <div class="resumepage page app-page">
 
-    <div class="resume__nav">
-        <ul>
-            <li><a href="#/resume">Summary</a></li>
-            <li><a href="#/resume/skills">Skills</a></li>
-            <li><a href="#/resume/work">Work History</a></li>
-            <li><a href="#/resume/education">Education &amp; Certification</a></li>
-        </ul>
-    </div>
+    <ss-resume-navbar></ss-resume-navbar>
 
     <form class="resume__form">
         <fieldset>
@@ -48,6 +41,15 @@
                 rows="10"
                 cols="50"></textarea>
         </fieldset>
+
+        <button type="submit" ng-disabled="isSaving" ng-show2="hasChanges">
+            <span ng-show="isSaving">
+                <svg class="form__button-icon spinner">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-spinner2"></use>
+                </svg>
+            </span>
+            <span ng-hide="isSaving">Save Changes</span>
+        </button>
 
     </form>
 
