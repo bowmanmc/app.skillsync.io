@@ -58,3 +58,10 @@ textarea {
     height: modular-scale(1);
     width: modular-scale(1);
 }
+
+.form__cols {
+    @include outer-container(100%);
+}
+.form__col {
+    @include span-columns(6);
+}

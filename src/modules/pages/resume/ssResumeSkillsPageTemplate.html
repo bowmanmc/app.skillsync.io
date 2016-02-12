@@ -9,11 +9,23 @@
                 Please pick the top 3 skills you want to use in your next
                 job and your level of experience with each.
             </p>
-            <input type="number"
-                class="resume__form-years"
-                placeholder="0"
-                ng-model="input.years"
-                ng-class="{'populated': input.years}" />
+
+            <div class="form__cols">
+                <div class="form__col">
+                    <input type="text"
+                        placeholder="D3.js"
+                        ng-model="input.skill"
+                        ng-class="{'populated': input.skill}" />
+                </div>
+                <div class="form__col">
+                    <input type="text"
+                        placeholder="Expert"
+                        ng-model="input.level"
+                        ng-class="{'populated': input.level}" />
+                </div>
+            </div>
+
+
         </fieldset>
 
         <button type="submit" ng-disabled="isSaving" ng-show2="hasChanges">
