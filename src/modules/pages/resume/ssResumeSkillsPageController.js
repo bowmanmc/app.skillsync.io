@@ -4,6 +4,10 @@ module.exports = function(ngModule) {
 
     ngModule.controller('ssResumeSkillsPageController', function($scope) {
 
+        $scope.saveSkill = function() {
+
+        };
+
         var initialize = function() {
 
             $scope.skillsList = [{

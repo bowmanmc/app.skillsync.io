@@ -11,7 +11,7 @@
         {{ skill.skill }} - {{ skill.level }}
     </div>
 
-    <div class="resume__form-ctr">
+    <div class="resume__skills-inputs">
         <div class="resume__skills-input">
             <input type="text"
                 placeholder="D3.js"
@@ -26,16 +26,16 @@
                 <option value="Expert">Expert</option>
             </select>
         </div>
-        <div class="resume__skills-btn">
-            <button type="submit" ng-disabled="isSaving" ng-show2="hasChanges">
-                <span ng-show="isSaving">
-                    <svg class="form__button-icon spinner">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-spinner2"></use>
-                    </svg>
-                </span>
-                <span ng-hide="isSaving">+</span>
-            </button>
-        </div>
+    </div>
+    <div class="resume__skills-btn">
+        <button type="submit" ng-disabled="isSaving" ng-show2="hasChanges">
+            <span ng-show="isSaving">
+                <svg class="form__button-icon spinner">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-spinner2"></use>
+                </svg>
+            </span>
+            <span ng-hide="isSaving">Add Skill</span>
+        </button>
     </div>
 
 </div><!-- mainpage -->
