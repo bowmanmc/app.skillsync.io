@@ -3,7 +3,10 @@ $forms-border-radius: 0.20em;
 $forms-border-size: 2px;
 $forms-transition: all 0.3s ease-in-out;
 
-#{$all-text-inputs} {
+#{$all-text-inputs}, select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     background: mix(#fff, $color-light-green, 90%);
     border: $forms-border-size solid $color-green;
     border-radius: $forms-border-radius;
@@ -57,11 +60,4 @@ textarea {
     fill: $color-light;
     height: modular-scale(1);
     width: modular-scale(1);
-}
-
-.form__cols {
-    @include outer-container(100%);
-}
-.form__col {
-    @include span-columns(6);
 }

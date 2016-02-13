@@ -27,3 +27,16 @@
         font-size: 0.9em;
     }
 }
+
+.resume__form-ctr {
+    //background: darken($color-light-grey, 3%);
+    //border-radius: 0.25em;
+    @include outer-container(100%);
+}
+
+.resume__skills-input {
+    @include span-columns(5);
+}
+.resume__skills-btn {
+    @include span-columns(2);
+}

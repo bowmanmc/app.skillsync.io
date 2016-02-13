@@ -2,41 +2,40 @@
 
     <ss-resume-navbar></ss-resume-navbar>
 
-    <form class="resume__form">
-        <fieldset>
-            <legend>Skills</legend>
-            <p>
-                Please pick the top 3 skills you want to use in your next
-                job and your level of experience with each.
-            </p>
+    <p>
+        Enter in the top 3 skills you want to use in your next job and your
+        current level with each.
+    </p>
 
-            <div class="form__cols">
-                <div class="form__col">
-                    <input type="text"
-                        placeholder="D3.js"
-                        ng-model="input.skill"
-                        ng-class="{'populated': input.skill}" />
-                </div>
-                <div class="form__col">
-                    <input type="text"
-                        placeholder="Expert"
-                        ng-model="input.level"
-                        ng-class="{'populated': input.level}" />
-                </div>
-            </div>
+    <div class="resume__skill" ng-repeat="skill in skillsList">
+        {{ skill.skill }} - {{ skill.level }}
+    </div>
 
-
-        </fieldset>
-
-        <button type="submit" ng-disabled="isSaving" ng-show2="hasChanges">
-            <span ng-show="isSaving">
-                <svg class="form__button-icon spinner">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-spinner2"></use>
-                </svg>
-            </span>
-            <span ng-hide="isSaving">Save Changes</span>
-        </button>
-
-    </form>
+    <div class="resume__form-ctr">
+        <div class="resume__skills-input">
+            <input type="text"
+                placeholder="D3.js"
+                ng-model="input.skill"
+                ng-class="{'populated': input.skill}" />
+        </div>
+        <div class="resume__skills-input">
+            <select ng-model="input.level">
+                <option value="" disabled>Level</option>
+                <option value="Beginner">Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Expert">Expert</option>
+            </select>
+        </div>
+        <div class="resume__skills-btn">
+            <button type="submit" ng-disabled="isSaving" ng-show2="hasChanges">
+                <span ng-show="isSaving">
+                    <svg class="form__button-icon spinner">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-spinner2"></use>
+                    </svg>
+                </span>
+                <span ng-hide="isSaving">+</span>
+            </button>
+        </div>
+    </div>
 
 </div><!-- mainpage -->
