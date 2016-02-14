@@ -1,46 +1,47 @@
-<div class="resumepage page app-page">
+
+<div class="page contentbox">
 
     <ss-resume-navbar></ss-resume-navbar>
 
     <form class="resume__form">
-        <fieldset>
-            <legend>Years of Experience</legend>
-            <p>
-                Please enter the number of years of professional experience
-                you have. This number usually does not include any time spent
-                on school work or side projects
-                (unless you were paid for the work done or the work was done
-                as a volunteer for a non-profit organization.).
-            </p>
-            <input type="number"
-                class="resume__form-years"
-                placeholder="0"
-                ng-model="input.years"
-                ng-class="{'populated': input.years}" />
-        </fieldset>
+        <div class="fieldsets">
+            <fieldset>
+                <legend>Years of Experience</legend>
+                <p>
+                    Please enter the number of years of professional experience
+                    you have. This number usually does not include any time spent
+                    on school work or side projects
+                    (unless you were paid for the work done or the work was done
+                    as a volunteer for a non-profit organization.).
+                </p>
+                <input type="number"
+                    class="resume__form-years"
+                    placeholder="0"
+                    ng-model="input.years"
+                    ng-class="{'populated': input.years}" />
 
-        <fieldset>
-            <legend>Location</legend>
-            <p>
-                Please enter the city and state where you reside, and whether or
-                not you are open to doing remote work.
-            </p>
-            <input type="text"
-                placeholder="City, ST"
-                ng-model="input.location"
-                ng-class="{'populated': input.location.length > 0}" />
-        </fieldset>
+                <legend>Location</legend>
+                <p>
+                    Please enter the city and state where you reside, and whether or
+                    not you are open to doing remote work.
+                </p>
+                <input type="text"
+                    placeholder="City, ST"
+                    ng-model="input.location"
+                    ng-class="{'populated': input.location.length > 0}" />
+            </fieldset>
 
-        <fieldset>
-            <legend>Summary</legend>
-            <p>
-                This is your chance to summarize your professional experience
-                and describe what kind of worker you are.
-            </p>
-            <textarea name="textarea"
-                rows="10"
-                cols="50"></textarea>
-        </fieldset>
+            <fieldset>
+                <legend>Summary</legend>
+                <p>
+                    This is your chance to summarize your professional experience
+                    and describe what kind of worker you are.
+                </p>
+                <textarea name="textarea"
+                    rows="10"
+                    cols="50"></textarea>
+            </fieldset>
+        </div>
 
         <button type="submit" ng-disabled="isSaving" ng-show2="hasChanges">
             <span ng-show="isSaving">
