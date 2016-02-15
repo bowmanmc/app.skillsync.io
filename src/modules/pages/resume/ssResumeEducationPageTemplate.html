@@ -1,29 +1,67 @@
-<div class="resumepage page app-page">
+<div class="page contentbox">
 
     <ss-resume-navbar></ss-resume-navbar>
 
-    <form class="resume__form">
-        <fieldset>
-            <legend>Education &amp; Certifications</legend>
-            <p>
-                Please list your education and certifications
-            </p>
-            <input type="number"
-                class="resume__form-years"
-                placeholder="0"
-                ng-model="input.years"
-                ng-class="{'populated': input.years}" />
-        </fieldset>
+    <div class="resume__cols">
+        <div class="resume__col">
+            <form class="resume__form peeky">
 
-        <button type="submit" ng-disabled="isSaving" ng-show2="hasChanges">
-            <span ng-show="isSaving">
-                <svg class="form__button-icon spinner">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-spinner2"></use>
-                </svg>
-            </span>
-            <span ng-hide="isSaving">Save Changes</span>
-        </button>
+                <label>
+                    <input type="text" placeholder="Institution Name"
+                        ng-model="input.name"
+                        ng-class="{'populated': input.name.length > 0}" />
+                    <span>Institution Name</span>
+                </label>
 
-    </form>
+                <label>
+                    <input type="text" placeholder="Institution Website"
+                        ng-model="input.url"
+                        ng-class="{'populated': input.url.length > 0}" />
+                    <span>Institution Website</span>
+                </label>
 
-</div><!-- mainpage -->
+                <label>
+                    <input type="text" placeholder="Start Date"
+                        ng-model="input.startDate"
+                        ng-class="{'populated': input.startDate.length > 0}" />
+                    <span>Start Date</span>
+                </label>
+
+                <label>
+                    <input type="text" placeholder="Graduation Date"
+                        ng-model="input.endDate"
+                        ng-class="{'populated': input.endDate.length > 0}" />
+                    <span>End Date</span>
+                </label>
+
+                <label>
+                    <input type="text" placeholder="Credential"
+                        ng-model="input.credential"
+                        ng-class="{'populated': input.credential.length > 0}" />
+                    <span>Credential</span>
+                </label>
+
+                <div class="resume__skills-btn">
+                    <button type="submit" ng-disabled="isSaving" ng-show2="hasChanges">
+                        <span ng-show="isSaving">
+                            <svg class="form__button-icon spinner">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-spinner2"></use>
+                            </svg>
+                        </span>
+                        <span ng-hide="isSaving">Add Education or Certification</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="resume__col">
+
+            <div class="resume__edu" ng-repeat="item in education">
+                {{ item.name }}
+            </div>
+
+        </div>
+
+    </div>
+
+</div><!-- page -->
