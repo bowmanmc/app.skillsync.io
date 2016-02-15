@@ -12,7 +12,7 @@ module.exports = function(ngModule) {
 
             $scope.skillsList = [{
                 skill: 'D3.js',
-                level: 'Expert'
+                level: 'Beginner'
             }, {
                 skill: 'AngularJS',
                 level: 'Intermediate'

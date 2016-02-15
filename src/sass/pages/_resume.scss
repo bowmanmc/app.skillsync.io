@@ -62,8 +62,6 @@
 }
 
 .resume__skills-inputs {
-    //background: darken($color-light-grey, 3%);
-    //border-radius: 0.25em;
     @include outer-container(100%);
 }
 
@@ -72,7 +70,23 @@
 }
 
 .resume__skills-btn {
-    text-align: right;
-
     @include outer-container(100%);
+}
+
+.resume__skill {
+    background: $color-light-grey;
+    border: 1px solid $color-green;
+    border-radius: 0.25em;
+    margin: 0.25em 0;
+    padding: 0.5em 1.0em;
+}
+
+.resume__skill-level-Beginner {
+    background: $color-teal;
+}
+.resume__skill-level-Intermediate {
+    background: mix($color-teal, #000, 85%);
+}
+.resume__skill-level-Expert {
+    background: mix($color-teal, #000, 70%);
 }

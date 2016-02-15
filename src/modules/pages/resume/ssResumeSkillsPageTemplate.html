@@ -47,8 +47,8 @@
 
         <div class="resume__skills-section">
 
-            <div class="resume__skill" ng-repeat="skill in skillsList">
-                {{ skill.skill }} - {{ skill.level }}
+            <div class="resume__skill resume__skill-level-{{ skill.level }}" ng-repeat="skill in skillsList">
+                {{ skill.skill }}
             </div>
 
         </div>
