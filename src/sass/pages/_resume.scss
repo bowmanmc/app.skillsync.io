@@ -25,29 +25,12 @@
     p {
         font-size: 0.9em;
     }
-
-    .fieldsets {
-        @include outer-container(100%);
-
-        fieldset {
-            @include span-columns(12);
-
-            @include media ($tablet-landscape) {
-                @include span-columns(6);
-                @include omega(2n);
-            }
-            @include media ($desktop) {
-                @include span-columns(6);
-                @include omega(2n);
-            }
-        }
-    }
 }
 
-.resume__skills-ctr {
+.resume__cols {
     @include outer-container(100%);
 
-    .resume__skills-section {
+    .resume__col {
         @include span-columns(12);
 
         @include media ($tablet-landscape) {
@@ -61,14 +44,6 @@
     }
 }
 
-.resume__skills-inputs {
-    @include outer-container(100%);
-}
-
-.resume__skills-input {
-    @include span-columns(6);
-}
-
 .resume__skills-btn {
     @include outer-container(100%);
 }
@@ -79,6 +54,29 @@
     border-radius: 0.25em;
     margin: 0.25em 0;
     padding: 0.5em 1.0em;
+}
+
+.resume__skills-inputs {
+    @include outer-container(100%);
+}
+.resume__skills-input {
+    @include span-columns(12);
+
+    @include media ($tablet-portrait) {
+        @include span-columns(6);
+        @include omega(2n);
+    }
+    @include media ($tablet-landscape) {
+        @include span-columns(6);
+        @include omega(2n);
+    }
+    @include media ($desktop) {
+        @include span-columns(6);
+        @include omega(2n);
+    }
+}
+.resume__skills-btn {
+    @include outer-container(100%);
 }
 
 .resume__skill-level-Beginner {

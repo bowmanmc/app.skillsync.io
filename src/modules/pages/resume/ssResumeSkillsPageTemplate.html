@@ -2,9 +2,8 @@
 
     <ss-resume-navbar></ss-resume-navbar>
 
-    <div class="resume__skills-ctr">
-
-        <div class="resume__skills-section">
+    <div class="resume__cols">
+        <div class="resume__col">
             <form class="resume__form">
                 <fieldset>
                     <!-- legend>Skills</legend -->
@@ -45,7 +44,7 @@
             </form>
         </div>
 
-        <div class="resume__skills-section">
+        <div class="resume__col">
 
             <div class="resume__skill resume__skill-level-{{ skill.level }}" ng-repeat="skill in skillsList">
                 {{ skill.skill }}
