@@ -39,43 +39,4 @@ $unauth-max-width: 768px;
 }
 
 // see components/_contentbox.scss
-
-// Modified Peeky Placeholders by Luke Reid
-// http://codepen.io/lukeandrewreid/pen/OVPGXN
-.form__unauth {
-    label {
-        position: relative;
-        display: block;
-
-        input {
-
-            &::placeholder {
-                transition: $forms-transition;
-            }
-
-            &:focus, &.populated {
-                padding-top: 28px;
-
-                &::placeholder {
-                    color: transparent;
-                }
-
-                & + span {
-                    opacity: 1;
-                    top: 10px;
-                }
-            }
-        }
-
-        span {
-            color: $color-txt-light;
-            font-size: 12px;
-            font-weight: bold;
-            position: absolute;
-            top: 0px;
-            left: 1.0em;
-            opacity: 0;
-            transition: $forms-transition;
-        }
-    }
-}
+// see components/_peeky.scss
