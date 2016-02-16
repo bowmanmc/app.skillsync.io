@@ -68,6 +68,20 @@ module.exports = function(ngModule) {
             return deferred.promise;
         };
 
+        this.updateAccount = function(accountId, changeset) {
+            var deferred = $q.defer();
+
+            var url = '/api/account/' + accountId;
+            $http.patch(url, changeset).then(function() {
+                deferred.resolve(null);
+            }, function(response) {
+                //console.log('Got error response: ' + JSON.stringify(response));
+                deferred.resolve(response);
+            });
+
+            return deferred.promise;
+        };
+
         this.invalidateSession = function(accountId) {
             var deferred = $q.defer();
 

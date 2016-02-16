@@ -44,7 +44,7 @@
                 </label>
 
                 <div class="contentbox__form-buttons">
-                    <button type="submit" ng-disabled="isSaving">
+                    <button type="submit" ng-disabled="isSaving" ng-click="updateAccount()">
                         <span ng-show="isSaving">
                             <svg class="form__button-icon spinner">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-spinner2"></use>
@@ -53,6 +53,10 @@
                         <span ng-hide="isSaving">Update Account</span>
                     </button>
                 </div>
+
+                <ul class="contentbox__form-errors" ng-show="errors.length">
+                    <li ng-repeat="error in errors">* {{error}}</li>
+                </ul>
             </form>
         </div>
 
