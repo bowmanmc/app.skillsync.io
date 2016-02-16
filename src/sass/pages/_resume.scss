@@ -27,23 +27,6 @@
     }
 }
 
-.resume__cols {
-    @include outer-container(100%);
-
-    .resume__col {
-        @include span-columns(12);
-
-        @include media ($tablet-landscape) {
-            @include span-columns(6);
-            @include omega(2n);
-        }
-        @include media ($desktop) {
-            @include span-columns(6);
-            @include omega(2n);
-        }
-    }
-}
-
 .resume__skills-btn {
     @include outer-container(100%);
 }

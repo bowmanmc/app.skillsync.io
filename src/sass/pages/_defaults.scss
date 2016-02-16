@@ -3,9 +3,19 @@
     margin-top: 80px;
 }
 
-.color {
+.page__cols {
+    @include outer-container(100%);
 
-}
+    .page__col {
+        @include span-columns(12);
 
-.app-page {
+        @include media ($tablet-landscape) {
+            @include span-columns(6);
+            @include omega(2n);
+        }
+        @include media ($desktop) {
+            @include span-columns(6);
+            @include omega(2n);
+        }
+    }
 }

@@ -7,6 +7,7 @@ module.exports = function(ngModule) {
         var initialize = function() {
             $scope.errors = [];
             $scope.input = {};
+            $scope.AuthService = AuthService;
         };
         initialize();
     });

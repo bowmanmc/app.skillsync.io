@@ -17,7 +17,7 @@ module.exports = function(ngModule) {
             templateUrl: 'modules/pages/main/ssMainPageTemplate.html'
         })
         // Account Pages
-        .when('/account/edit', {
+        .when('/account', {
              controller: 'ssAccountEditPageController',
             templateUrl: 'modules/pages/account/ssAccountEditPageTemplate.html'
         })
