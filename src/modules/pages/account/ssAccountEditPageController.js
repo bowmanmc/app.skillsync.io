@@ -7,7 +7,6 @@ module.exports = function(ngModule) {
         $scope.updateAccount = function() {
 
             $scope.isSaving = true;
-
             $scope.errors = [];
             var name = $scope.input.name;
             var email = $scope.input.email;
@@ -21,15 +20,24 @@ module.exports = function(ngModule) {
             if (email && email !== AuthService.account.email) {
                 changeset.email = email;
             }
-            console.log('Changeset: ' + JSON.stringify(changeset));
 
+            // Make sure the user changed something before bothering the server
             if (angular.equals({}, changeset)) {
                 $scope.errors.push('No changes detected...');
                 $scope.isSaving = false;
                 return;
             }
 
-            console.log('Updating Account...');
+            var updateAccount = function(changes) {
+                AccountApi.updateAccount(AuthService.account._id, changes).then(function(error) {
+                    if (error) {
+                        $scope.errors.push(error);
+                    }
+                    AuthService.loadAccount();
+                    $scope.isSaving = false;
+                });
+            };
+
             if (changeset.email) {
                 // check if the new email is registered first...
                 AccountApi.checkIfEmailIsRegistered(changeset.email).then(function(isRegistered) {
@@ -40,24 +48,12 @@ module.exports = function(ngModule) {
                         return;
                     }
                     // else, update the account
-                    AccountApi.updateAccount(AuthService.account._id, changeset).then(function(error) {
-                        if (error) {
-                            $scope.errors.push(error);
-                        }
-                        AuthService.loadAccount();
-                        $scope.isSaving = false;
-                    });
+                    updateAccount(changeset);
                 });
             }
             else {
                 // the user insn't changing their email, so just update the account
-                AccountApi.updateAccount(AuthService.account._id, changeset).then(function(error) {
-                    if (error) {
-                        $scope.errors.push(error);
-                    }
-                    AuthService.loadAccount();
-                    $scope.isSaving = false;
-                });
+                updateAccount(changeset);
             }
         };
 
