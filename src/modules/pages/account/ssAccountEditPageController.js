@@ -2,7 +2,7 @@
 
 module.exports = function(ngModule) {
 
-    ngModule.controller('ssAccountEditPageController', function($location, $scope, AccountApi, AuthService) {
+    ngModule.controller('ssAccountEditPageController', function($location, $scope, AccountApi, AuthService, HashService) {
 
         $scope.updateAccount = function() {
 
@@ -61,6 +61,14 @@ module.exports = function(ngModule) {
             $scope.errors = [];
             $scope.input = {};
             $scope.AuthService = AuthService;
+
+            $scope.$watch('AuthService.account', function() {
+                var hash = '';
+                if (AuthService.account && AuthService.account.email) {
+                    hash = HashService.md5(AuthService.account.email);
+                }
+                $scope.gravatar = `http://www.gravatar.com/avatar/${ hash }?s=256`;
+            });
         };
         initialize();
     });
