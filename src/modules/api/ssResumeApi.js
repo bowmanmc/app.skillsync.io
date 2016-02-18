@@ -17,6 +17,21 @@ module.exports = function(ngModule) {
             return deferred.promise;
         };
 
+        this.updateResume = function(accountId, changes) {
+            var deferred = $q.defer();
+
+            var url = '/api/resume/' + accountId;
+            $http.patch(url, changes).then(function(response) {
+                console.log('Got success response: ' + JSON.stringify(response));
+                deferred.resolve(null);
+            }, function(response) {
+                console.log('Got error response: ' + JSON.stringify(response));
+                deferred.resolve(response);
+            });
+
+            return deferred.promise;
+        };
+
         this.getResume = function(accountId) {
             var deferred = $q.defer();
 

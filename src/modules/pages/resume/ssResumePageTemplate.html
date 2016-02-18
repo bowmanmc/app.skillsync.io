@@ -17,7 +17,6 @@
                     </p>
                     <input type="number"
                         class="resume__form-years"
-                        placeholder="0"
                         ng-model="input.years"
                         ng-class="{'populated': input.years}" />
                 </fieldset>
@@ -28,7 +27,6 @@
                         not you are open to doing remote work.
                     </p>
                     <input type="text"
-                        placeholder="City, ST"
                         ng-model="input.location"
                         ng-class="{'populated': input.location.length > 0}" />
                 </fieldset>
@@ -41,13 +39,14 @@
                         and describe what kind of worker you are.
                     </p>
                     <textarea name="textarea"
+                        ng-model="input.summary"
                         rows="10"
                         cols="50"></textarea>
                 </fieldset>
             </div>
         </div>
 
-        <button type="submit" ng-disabled="isSaving" ng-show2="hasChanges">
+        <button type="submit" ng-disabled="isSaving" ng-click="saveChanges()">
             <span ng-show="isSaving">
                 <svg class="form__button-icon spinner">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-spinner2"></use>
@@ -56,6 +55,9 @@
             <span ng-hide="isSaving">Save Changes</span>
         </button>
 
+        <ul class="contentbox__form-errors" ng-show="errors.length">
+            <li ng-repeat="error in errors">* {{error}}</li>
+        </ul>
     </form>
 
 </div><!-- mainpage -->

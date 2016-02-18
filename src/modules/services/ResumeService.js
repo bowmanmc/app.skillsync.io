@@ -21,6 +21,22 @@ module.exports = function(ngModule) {
             });
         };
 
+        this.updateResume = function(changes) {
+            var deferred = $q.defer();
+
+            var svc = this;
+            var accountId = AuthService.getAccountId();
+            ResumeApi.updateResume(accountId, changes).then(function() {
+                // now that we've update it, get the canonical version
+                // from the server
+                svc.loadResume().then(function() {
+                    deferred.resolve(svc.resume);
+                });
+            });
+
+            return deferred.promise;
+        };
+
         this.createResume = function() {
             var deferred = $q.defer();
             var svc = this;
