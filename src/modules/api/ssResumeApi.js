@@ -21,11 +21,10 @@ module.exports = function(ngModule) {
             var deferred = $q.defer();
 
             var url = '/api/resume/' + accountId;
-            $http.patch(url, changes).then(function(response) {
-                console.log('Got success response: ' + JSON.stringify(response));
+            $http.patch(url, changes).then(function() {
                 deferred.resolve(null);
             }, function(response) {
-                console.log('Got error response: ' + JSON.stringify(response));
+                // error response
                 deferred.resolve(response);
             });
 

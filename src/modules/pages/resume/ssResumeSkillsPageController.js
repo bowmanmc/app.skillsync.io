@@ -4,6 +4,10 @@ module.exports = function(ngModule) {
 
     ngModule.controller('ssResumeSkillsPageController', function($scope, ResumeService) {
 
+        $scope.removeSkill = function(skill2delete) {
+            ResumeService.removeSkill(skill2delete);
+        };
+
         $scope.saveSkill = function() {
             $scope.isSaving = true;
             $scope.errors = [];
@@ -24,7 +28,6 @@ module.exports = function(ngModule) {
                 $scope.isSaving = false;
                 $scope.input = {};
             });
-
         };
 
         var initialize = function() {

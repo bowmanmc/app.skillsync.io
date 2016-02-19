@@ -21,6 +21,30 @@ module.exports = function(ngModule) {
             });
         };
 
+        this.removeSkill = function(skill) {
+            var deferred = $q.defer();
+
+            var index = this.resume.skills.indexOf(skill);
+            if (index > -1) {
+                this.resume.skills.splice(index, 1);
+
+                var svc = this;
+                var accountId = AuthService.getAccountId();
+                ResumeApi.updateResume(accountId, {
+                    skills: this.resume.skills
+                }).then(function() {
+                    svc.loadResume().then(function() {
+                        deferred.resolve(svc.resume);
+                    });
+                });
+            }
+            else {
+                deferred.resolve();
+            }
+
+            return deferred.promise;
+        };
+
         this.addSkill = function(skill) {
             var deferred = $q.defer();
 

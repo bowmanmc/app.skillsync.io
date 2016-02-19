@@ -39,6 +39,21 @@
     padding: 0.5em 1.0em;
 }
 
+.resume__skill-remove-icon {
+    float: right;
+    height: 24px;
+    width: 24px;
+
+    svg {
+        fill: $color-light-grey;
+    }
+}
+.resume__skill-remove-icon:hover {
+    svg {
+        fill: #fff;
+    }
+}
+
 .resume__skills-inputs {
     @include outer-container(100%);
 }
