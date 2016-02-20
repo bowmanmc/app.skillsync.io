@@ -3,6 +3,7 @@ $unauth-max-width: 768px;
 
 .unauth {
     height: 100%;
+    margin-top: -80px;
     padding: 2.0em 1.0em;
     text-align: center;
 
@@ -20,7 +21,6 @@ $unauth-max-width: 768px;
 }
 
 .unauth__logo {
-
     margin-bottom: 1.5em;
 
     img {
