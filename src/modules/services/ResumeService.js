@@ -66,6 +66,53 @@ module.exports = function(ngModule) {
             return deferred.promise;
         };
 
+        this.removeWork = function(workItem) {
+            var deferred = $q.defer();
+
+            var index = this.resume.work.indexOf(workItem);
+            if (index > -1) {
+                this.resume.work.splice(index, 1);
+
+                var svc = this;
+                var accountId = AuthService.getAccountId();
+                ResumeApi.updateResume(accountId, {
+                    work: this.resume.work
+                }).then(function() {
+                    svc.loadResume().then(function() {
+                        deferred.resolve(svc.resume);
+                    });
+                });
+            }
+            else {
+                deferred.resolve();
+            }
+
+            return deferred.promise;
+        };
+
+        this.addWork = function(workItem) {
+            var deferred = $q.defer();
+
+            var svc = this;
+            var accountId = AuthService.getAccountId();
+            var work = [];
+            if (this.resume && this.resume.work.length) {
+                work = this.resume.work;
+            }
+            work.push(workItem);
+            console.log('Setting work to: ' + JSON.stringify(work));
+            ResumeApi.updateResume(accountId, {
+                work: work
+            }).then(function() {
+                svc.loadResume().then(function() {
+                    console.log('New resume: ' + JSON.stringify(svc.resume));
+                    deferred.resolve(svc.resume);
+                });
+            });
+
+            return deferred.promise;
+        };
+
         this.updateResume = function(changes) {
             var deferred = $q.defer();
 

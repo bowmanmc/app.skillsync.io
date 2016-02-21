@@ -7,42 +7,50 @@
             <form class="resume__form peeky">
 
                 <label>
-                    <input type="text" placeholder="Company Name"
-                        ng-model="input.companyName"
-                        ng-class="{'populated': input.companyName.length > 0}" />
-                    <span>Company Name</span>
+                    <input type="text" placeholder="Employer Name"
+                        ng-model="input.name"
+                        ng-class="{'populated': input.name.length > 0}" />
+                    <span>Employer Name</span>
                 </label>
 
                 <label>
-                    <input type="text" placeholder="Company Website"
-                        ng-model="input.companyUrl"
-                        ng-class="{'populated': input.companyUrl.length > 0}" />
-                    <span>Company Website</span>
+                    <input type="text" placeholder="Employer Website"
+                        ng-model="input.url"
+                        ng-class="{'populated': input.url.length > 0}" />
+                    <span>Employer Website</span>
+                </label>
+
+                <label>
+                    <input type="text" placeholder="Job Title"
+                        ng-model="input.title"
+                        ng-class="{'populated': input.title.length > 0}" />
+                    <span>Job Title</span>
                 </label>
 
                 <label>
                     <input type="text" placeholder="Start Date"
-                        ng-model="input.companyStartDate"
-                        ng-class="{'populated': input.companyStartDate.length > 0}" />
+                        ng-model="input.startDate"
+                        ng-class="{'populated': input.startDate.length > 0}" />
                     <span>Start Date</span>
                 </label>
 
                 <label>
-                    <input type="text" placeholder="Present"
-                        ng-model="input.companyEndDate"
-                        ng-class="{'populated': input.companyEndDate.length > 0}" />
+                    <input type="text" placeholder="End Date"
+                        ng-model="input.endDate"
+                        ng-class="{'populated': input.endDate.length > 0}" />
                     <span>End Date</span>
                 </label>
 
                 <label>
                     <textarea name="textarea"
+                        ng-model="input.description"
                         placeholder="Description"
                         rows="5"></textarea>
                     <span>Description</span>
                 </label>
 
                 <div class="resume__skills-btn">
-                    <button type="submit" ng-disabled="isSaving" ng-show2="hasChanges">
+                    <button type="submit" ng-disabled="isSaving" ng-click="saveWork()">
                         <span ng-show="isSaving">
                             <svg class="form__button-icon spinner">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-spinner2"></use>
@@ -51,12 +59,16 @@
                         <span ng-hide="isSaving">Add Work</span>
                     </button>
                 </div>
+
+                <ul class="contentbox__form-errors" ng-show="errors.length">
+                    <li ng-repeat="error in errors">* {{error}}</li>
+                </ul>
             </form>
         </div>
 
         <div class="page__col">
 
-            <div class="resume__work" ng-repeat="job in work">
+            <div class="resume__work" ng-repeat="job in ResumeService.resume.work">
                 {{ job.name }}
             </div>
 
