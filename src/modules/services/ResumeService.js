@@ -21,53 +21,56 @@ module.exports = function(ngModule) {
             });
         };
 
-        this.removeSkill = function(skill) {
+        this.addItemToArray = function(arrayName, item) {
             var deferred = $q.defer();
 
-            var index = this.resume.skills.indexOf(skill);
-            if (index > -1) {
-                this.resume.skills.splice(index, 1);
-
-                this.updateResume({
-                    skills: this.resume.skills
-                }).then(function(result) {
-                    deferred.resolve(result);
-                });
+            var items = [];
+            if (this.resume && this.resume[arrayName].length) {
+                items = this.resume[arrayName];
             }
-            else {
-                deferred.resolve();
-            }
-
-            return deferred.promise;
-        };
-
-        this.addSkill = function(skill) {
-            var deferred = $q.defer();
-
-            var skills = [];
-            if (this.resume && this.resume.skills.length) {
-                skills = this.resume.skills;
-            }
-            skills.push(skill);
-            this.updateResume({
-                skills: skills
-            }).then(function(result) {
+            items.push(item);
+            var changes = {};
+            changes[arrayName] = items;
+            this.updateResume(changes).then(function(result) {
                 deferred.resolve(result);
             });
 
             return deferred.promise;
         };
 
-        this.removeWork = function(workItem) {
+        this.addEducation = function(edu) {
+            var deferred = $q.defer();
+            this.addItemToArray('education', edu).then(function(result) {
+                deferred.resolve(result);
+            });
+            return deferred.promise;
+        };
+
+        this.addSkill = function(skill) {
+            var deferred = $q.defer();
+            this.addItemToArray('skills', skill).then(function(result) {
+                deferred.resolve(result);
+            });
+            return deferred.promise;
+        };
+
+        this.addWork = function(workItem) {
+            var deferred = $q.defer();
+            this.addItemToArray('work', workItem).then(function(result) {
+                deferred.resolve(result);
+            });
+            return deferred.promise;
+        };
+
+        this.removeItemFromArray = function(arrayName, item) {
             var deferred = $q.defer();
 
-            var index = this.resume.work.indexOf(workItem);
+            var index = this.resume[arrayName].indexOf(item);
             if (index > -1) {
-                this.resume.work.splice(index, 1);
-
-                this.updateResume({
-                    work: this.resume.work
-                }).then(function(result) {
+                this.resume[arrayName].splice(index, 1);
+                var changes = {};
+                changes[arrayName] = this.resume[arrayName];
+                this.updateResume(changes).then(function(result) {
                     deferred.resolve(result);
                 });
             }
@@ -78,29 +81,36 @@ module.exports = function(ngModule) {
             return deferred.promise;
         };
 
-        this.addWork = function(workItem) {
+        this.removeEducation = function(edu) {
             var deferred = $q.defer();
-
-            var w = [];
-            if (this.resume && this.resume.work.length) {
-                w = this.resume.work;
-            }
-            w.push(workItem);
-
-            this.updateResume({
-                work: w
-            }).then(function(newResume) {
-                deferred.resolve(newResume);
+            this.removeItemFromArray('education', edu).then(function(result) {
+                deferred.resolve(result);
             });
-
             return deferred.promise;
         };
 
+        this.removeSkill = function(skill) {
+            var deferred = $q.defer();
+            this.removeItemFromArray('skills', skill).then(function(result) {
+                deferred.resolve(result);
+            });
+            return deferred.promise;
+        };
+
+        this.removeWork = function(workItem) {
+            var deferred = $q.defer();
+            this.removeItemFromArray('work', workItem).then(function(result) {
+                deferred.resolve(result);
+            });
+            return deferred.promise;
+        };
+
+
         this.updateResume = function(changes) {
             var deferred = $q.defer();
-            console.log('Updating resume with changes: ' + JSON.stringify(changes));
             var svc = this;
             var accountId = AuthService.getAccountId();
+            console.log('Making changes to resume: ' + JSON.stringify(changes));
             ResumeApi.updateResume(accountId, changes).then(function() {
                 // now that we've update it, get the canonical version
                 // from the server
@@ -132,6 +142,7 @@ module.exports = function(ngModule) {
                 var accountId = AuthService.getAccountId();
                 ResumeApi.getResume(accountId).then(function(resume) {
                     svc.resume = resume;
+                    console.log('Loaded resume: ' + JSON.stringify(resume));
                     deferred.resolve(svc.resume);
                 });
             }
