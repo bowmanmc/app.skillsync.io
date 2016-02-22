@@ -70,6 +70,12 @@
 
             <div class="resume__work" ng-repeat="job in ResumeService.resume.work">
                 {{ job.name }}
+
+                <a class="resume__remove-icon" ng-click="removeWork(job)">
+                    <svg class="form__button-icon">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-cancel-circle"></use>
+                    </svg>
+                </a>
             </div>
 
         </div>

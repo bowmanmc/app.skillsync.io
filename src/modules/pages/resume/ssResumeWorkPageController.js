@@ -4,6 +4,11 @@ module.exports = function(ngModule) {
 
     ngModule.controller('ssResumeWorkPageController', function($scope, ResumeService) {
 
+
+        $scope.removeWork = function(work2delete) {
+            ResumeService.removeWork(work2delete);
+        };
+
         $scope.saveWork = function() {
             $scope.isSaving = true;
             $scope.errors = [];

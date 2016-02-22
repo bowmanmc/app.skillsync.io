@@ -27,6 +27,21 @@
     }
 }
 
+.resume__remove-icon {
+    float: right;
+    height: 24px;
+    width: 24px;
+
+    svg {
+        fill: $color-light-grey;
+    }
+}
+.resume__remove-icon:hover {
+    svg {
+        fill: #fff;
+    }
+}
+
 .resume__skills-btn {
     @include outer-container(100%);
 }
@@ -37,21 +52,6 @@
     border-radius: 0.25em;
     margin: 0.25em 0;
     padding: 0.5em 1.0em;
-}
-
-.resume__skill-remove-icon {
-    float: right;
-    height: 24px;
-    width: 24px;
-
-    svg {
-        fill: $color-light-grey;
-    }
-}
-.resume__skill-remove-icon:hover {
-    svg {
-        fill: #fff;
-    }
 }
 
 .resume__skills-inputs {
@@ -85,4 +85,8 @@
 }
 .resume__skill-level-Expert {
     background: mix($color-teal, #000, 70%);
+}
+
+.resume__work {
+    background: $color-light-grey;
 }
