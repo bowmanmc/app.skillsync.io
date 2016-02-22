@@ -136,15 +136,20 @@ module.exports = function(ngModule) {
 
         this.loadResume = function() {
             var deferred = $q.defer();
-
             var svc = this;
+            svc.isLoading = true;
+
             if (AuthService.token) {
                 var accountId = AuthService.getAccountId();
                 ResumeApi.getResume(accountId).then(function(resume) {
                     svc.resume = resume;
-                    console.log('Loaded resume: ' + JSON.stringify(resume));
+                    svc.isLoading = false;
                     deferred.resolve(svc.resume);
                 });
+            }
+            else {
+                // Not logged in... something is wrong. No resume to load.
+                deferred.resolve();
             }
 
             return deferred.promise;

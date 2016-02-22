@@ -13,6 +13,16 @@
         padding: 0.5em 1.0em;
     }
 }
+.resume__nav-activity {
+
+    float: right;
+
+    svg {
+        fill: $color-txt;
+        height: 12px;
+        width: 12px;
+    }
+}
 
 .resume__form {
 

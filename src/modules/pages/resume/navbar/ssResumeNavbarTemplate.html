@@ -6,4 +6,9 @@
         <li><a ng-click="goto('/resume/work')">Work History</a></li>
         <li><a ng-click="goto('/resume/education')">Education &amp; Certification</a></li>
     </ul>
+    <div class="resume__nav-activity" ng-show="ResumeService.isLoading">
+        <svg class="spinner">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-spinner2"></use>
+        </svg>
+    </div>
 </div>
