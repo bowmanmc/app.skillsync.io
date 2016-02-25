@@ -2,7 +2,7 @@
 
 module.exports = function(ngModule) {
 
-    ngModule.controller('ssResumePageController', function($scope, ResumeService) {
+    ngModule.controller('ssResumePageController', function($scope, JobCategories, ResumeService) {
 
         $scope.saveChanges = function() {
             $scope.errors = [];
@@ -46,6 +46,7 @@ module.exports = function(ngModule) {
         var initialize = function() {
             $scope.isSaving = false;
             $scope.errors = [];
+            $scope.JobCategories = JobCategories;
             ResumeService.initResume();
             $scope.ResumeService = ResumeService;
             $scope.$watch('ResumeService.resume', function() {

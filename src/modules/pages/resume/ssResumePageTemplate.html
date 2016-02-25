@@ -7,6 +7,28 @@
         <div class="page__cols">
             <div class="page__col">
                 <fieldset>
+                    <legend>Job Category</legend>
+                    <p>
+                        Please enter the general category of job you are
+                        looking for.
+                    </p>
+                    <!-- input type="text"
+                        ng-model="input.category"
+                        ng-class="{'populated': input.category}" / -->
+                    <!-- select ng-model="input.category">
+                        <option value="" disabled>Job Category</option>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Expert">Expert</option>
+                    </select -->
+                    <select ng-model="input.category">
+                        <option value="" disabled>Job Category</option>
+                        <option ng-repeat="category in JobCategories">
+                            {{ category}}
+                        </option>
+                    </select>
+                </fieldset>
+                <fieldset>
                     <legend>Years of Experience</legend>
                     <p>
                         Please enter the number of years of professional experience
