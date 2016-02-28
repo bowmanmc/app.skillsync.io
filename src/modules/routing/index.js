@@ -42,6 +42,10 @@ module.exports = function(ngModule) {
              controller: 'ssResumeEducationPageController',
             templateUrl: 'modules/pages/resume/ssResumeEducationPageTemplate.html'
         })
+        .when('/resume/projects', {
+             controller: 'ssResumeProjectsPageController',
+            templateUrl: 'modules/pages/resume/ssResumeProjectsPageTemplate.html'
+        })
         .when('/resume/skills', {
              controller: 'ssResumeSkillsPageController',
             templateUrl: 'modules/pages/resume/ssResumeSkillsPageTemplate.html'

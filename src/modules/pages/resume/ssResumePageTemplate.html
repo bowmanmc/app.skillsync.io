@@ -12,35 +12,12 @@
                         Please enter the general category of job you are
                         looking for.
                     </p>
-                    <!-- input type="text"
-                        ng-model="input.category"
-                        ng-class="{'populated': input.category}" / -->
-                    <!-- select ng-model="input.category">
-                        <option value="" disabled>Job Category</option>
-                        <option value="Beginner">Beginner</option>
-                        <option value="Intermediate">Intermediate</option>
-                        <option value="Expert">Expert</option>
-                    </select -->
                     <select ng-model="input.category">
                         <option value="" disabled>Job Category</option>
                         <option ng-repeat="category in JobCategories">
                             {{ category}}
                         </option>
                     </select>
-                </fieldset>
-                <fieldset>
-                    <legend>Years of Experience</legend>
-                    <p>
-                        Please enter the number of years of professional experience
-                        you have. This number usually does not include any time spent
-                        on school work or side projects
-                        (unless you were paid for the work done or the work was done
-                        as a volunteer for a non-profit organization.).
-                    </p>
-                    <input type="number"
-                        class="resume__form-years"
-                        ng-model="input.years"
-                        ng-class="{'populated': input.years}" />
                 </fieldset>
                 <fieldset>
                     <legend>Location</legend>
