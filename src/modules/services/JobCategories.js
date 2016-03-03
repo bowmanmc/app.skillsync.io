@@ -9,7 +9,7 @@ module.exports = function(ngModule) {
             'Software Development',
             'System Administration',
             'User Experience/Interaction Design',
-            'Visual Design',
+            'Visual Design'
         ];
     });
 };

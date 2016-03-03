@@ -43,6 +43,29 @@
                     <span>Email Address</span>
                 </label>
 
+                <label>
+                    <input type="text" placeholder="{{ AuthService.account.location || 'Location' }}"
+                        ng-model="input.location"
+                        ng-class="{'populated': input.location.length > 0}" />
+                    <span>Location</span>
+                </label>
+
+                <label>
+                    <input type="checkbox"
+                        ng-model="input.remote"
+                    />
+                    Open to Remote Positions
+                </label>
+
+                <label>
+                    <select ng-model="input.salary">
+                        <option value="" disabled>Desired Salary Range</option>
+                        <option ng-repeat="salary in SalaryRanges">
+                            {{ salary }}
+                        </option>
+                    </select>
+                </label>
+
                 <div class="contentbox__form-buttons">
                     <button type="submit" ng-disabled="isSaving" ng-click="updateAccount()">
                         <span ng-show="isSaving">

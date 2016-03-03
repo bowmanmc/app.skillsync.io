@@ -13,9 +13,6 @@ module.exports = function(ngModule) {
             if ($scope.input.years !== ResumeService.resume.years) {
                 changes.years = $scope.input.years;
             }
-            if ($scope.input.location !== ResumeService.resume.location) {
-                changes.location = $scope.input.location;
-            }
             if ($scope.input.summary !== ResumeService.resume.summary) {
                 changes.summary = $scope.input.summary;
             }
@@ -38,7 +35,6 @@ module.exports = function(ngModule) {
             }
             if (ResumeService.resume) {
                 $scope.input.years = ResumeService.resume.years;
-                $scope.input.location = ResumeService.resume.location;
                 $scope.input.summary = ResumeService.resume.summary;
             }
         };
