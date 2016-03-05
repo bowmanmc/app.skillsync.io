@@ -8,6 +8,12 @@
         </li>
 
         <li class="navbar__link navbar__link-selected">
+            <a ng-click="goto('/')">
+                <span class="navbar__link-txt">Dashboard</span>
+            </a>
+        </li>
+
+        <li class="navbar__link navbar__link-selected">
             <a ng-click="goto('/resume')">
                 <span class="navbar__link-txt">Resume</span>
             </a>
@@ -17,10 +23,6 @@
             <a ng-click="goto('/account')">
                 <span class="navbar__link-txt">Account</span>
             </a>
-        </li>
-
-        <li class="navbar__link">
-            <a ng-click="AuthService.signOut()">Sign Out</a>
         </li>
 
     </ul>

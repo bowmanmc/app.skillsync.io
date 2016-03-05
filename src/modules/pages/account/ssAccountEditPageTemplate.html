@@ -23,6 +23,12 @@
             <p>
                 Last updated: {{ AuthService.account.updated | date:'medium' }}.
             </p>
+
+            <div class="contentbox__form-buttons">
+                <button ng-click="AuthService.signOut()">
+                    <span>Sign Out</span>
+                </button>
+            </div>
         </div>
 
         <div class="page__col">

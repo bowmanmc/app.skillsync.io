@@ -2,6 +2,6 @@
 
 module.exports = function(ngModule) {
     require('./account')(ngModule);
-    require('./main')(ngModule);
+    require('./dashboard')(ngModule);
     require('./resume')(ngModule);
 };

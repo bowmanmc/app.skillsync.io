@@ -2,10 +2,12 @@
 
 module.exports = function(ngModule) {
 
-    ngModule.controller('ssMainPageController', function() {
+    ngModule.controller('ssDashboardPageController', function($scope, AuthService) {
 
         var initialize = function() {
-            console.log('ssMainPageController initializing...');
+
+            $scope.AuthService = AuthService;
+
         };
         initialize();
     });

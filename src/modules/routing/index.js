@@ -11,10 +11,10 @@ module.exports = function(ngModule) {
 
     ngModule.config(function($routeProvider) {
         $routeProvider
-        // Main Dashboard
+        // Dashboard
         .when('/', {
-             controller: 'ssMainPageController',
-            templateUrl: 'modules/pages/main/ssMainPageTemplate.html'
+             controller: 'ssDashboardPageController',
+            templateUrl: 'modules/pages/dashboard/ssDashboardPageTemplate.html'
         })
         // Account Pages
         .when('/account', {
