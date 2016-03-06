@@ -1,15 +1,14 @@
 
 $forms-border-radius: 0.20em;
-$forms-border-size: 2px;
+$forms-border-size: 1px;
 $forms-transition: all 0.3s ease-in-out;
 
 #{$all-text-inputs}, select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
-    background: mix(#fff, $color-light-green, 90%);
-    border: $forms-border-size solid $color-green;
+    background: #fcfffc;
+    border: $forms-border-size solid $color-txt;
     border-radius: $forms-border-radius;
+    box-shadow: 1px 1px 0 #fff;
     color: $color-txt-light;
     display: block;
     font-size: modular-scale(1);
@@ -23,7 +22,8 @@ $forms-transition: all 0.3s ease-in-out;
 #{$all-text-inputs-focus},
 #{$all-text-inputs-hover} {
     background: #fff;
-    border: $forms-border-size solid $color-light-green;
+    border: $forms-border-size solid $color-dark-teal;
+    box-shadow: 0px 0px 27px rgba(0, 0, 0, 0.15);
     color: $color-txt;
 }
 
