@@ -21,19 +21,19 @@ $unauth-max-width: 768px;
 }
 
 .unauth__logo {
-    margin-bottom: 1.5em;
+    margin-bottom: 0.5em;
 
     img {
         height: 72px;
 
         @include media($tablet-portrait) {
-            height: 72px;
+            height: 96px;
         }
         @include media ($tablet-landscape) {
             height: 128px;
         }
         @include media ($desktop) {
-            height: 128px;
+            height: 172px;
         }
     }
 }
