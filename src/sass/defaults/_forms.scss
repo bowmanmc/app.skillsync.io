@@ -42,6 +42,41 @@ $forms-bg-focus: #ffffff;
     color: $color-txt;
 }
 
+// Modified Peeky Placeholders by Luke Reid
+// http://codepen.io/lukeandrewreid/pen/OVPGXN
+.form {
+    label {
+        position: relative;
+        display: block;
+
+        input {
+            padding-top: 24px;
+
+            & + span {
+                opacity: 1;
+                top: 7px;
+            }
+
+            &:focus, &.populated {
+                & + span {
+                    color: $color-txt;
+                }
+            }
+        }
+
+        span {
+            color: $color-txt-light;
+            font-size: 12px;
+            font-weight: bold;
+            position: absolute;
+            top: 0px;
+            left: 0.75em;
+            opacity: 0;
+            transition: $forms-transition;
+        }
+    }
+}
+
 
 // -- Buttons
 #{$all-buttons} {
