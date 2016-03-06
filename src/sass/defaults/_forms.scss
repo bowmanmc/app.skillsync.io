@@ -1,14 +1,23 @@
+/**
+ * Form Styling.
+ * Hat tip to nrrrdcore's gist on styling inputs:
+ *     https://gist.github.com/nrrrdcore/3309046
+ *
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow
+ */
+$forms-border-radius: 3px; //0.20em;
+$forms-transition: all 0.27s ease-in-out;
+$forms-bg-out: #f0f3f0;
+$forms-bg-out: #fcfffc;
+$forms-bg-focus: #ffffff;
 
-$forms-border-radius: 0.20em;
-$forms-border-size: 1px;
-$forms-transition: all 0.3s ease-in-out;
-
+// -- Form Inputs
 #{$all-text-inputs}, select {
     appearance: none;
-    background: #fcfffc;
-    border: $forms-border-size solid $color-txt;
+    background: $forms-bg-out;
+    border: 1px solid lighten($color-txt-light, 20%);
     border-radius: $forms-border-radius;
-    box-shadow: 1px 1px 0 #fff;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.25), 1px 1px 0 #ffffff;
     color: $color-txt-light;
     display: block;
     font-size: modular-scale(1);
@@ -19,20 +28,26 @@ $forms-transition: all 0.3s ease-in-out;
     width: 100%;
 }
 
-#{$all-text-inputs-focus},
 #{$all-text-inputs-hover} {
-    background: #fff;
-    border: $forms-border-size solid $color-dark-teal;
-    box-shadow: 0px 0px 27px rgba(0, 0, 0, 0.15);
+    background: $forms-bg-out;
+    border: 1px solid $color-txt-light;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.15);
     color: $color-txt;
 }
 
-#{$all-buttons} {
-    -webkit-appearance: none;
-    -moz-appearance: none;
+#{$all-text-inputs-focus} {
+    background: $forms-bg-focus;
+    border: 1px solid $color-green;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.27);
+    color: $color-txt;
+}
 
+
+// -- Buttons
+#{$all-buttons} {
+    appearance: none;
     background-color: $color-green;
-    border: $forms-border-size solid $color-green;
+    border: 1px solid $color-green;
     border-radius: $forms-border-radius;
     color: $color-light;
     cursor: pointer;
@@ -47,7 +62,7 @@ $forms-transition: all 0.3s ease-in-out;
 
 #{$all-buttons-focus},
 #{$all-buttons-hover} {
-    border: $forms-border-size solid $color-light-green;
+    border: 1px solid $color-light-green;
     color: #fff;
     text-shadow: 1px 1px 1px darken($color-dark-green, 5%);
 }
