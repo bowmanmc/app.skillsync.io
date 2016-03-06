@@ -57,10 +57,14 @@ $forms-bg-focus: #ffffff;
                 top: 7px;
             }
 
-            &:focus, &.populated {
+            &:focus {
                 & + span {
                     color: $color-txt;
                 }
+            }
+
+            &.populated {
+                color: $color-txt;
             }
         }
 
