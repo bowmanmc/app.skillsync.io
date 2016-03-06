@@ -2,24 +2,14 @@
 
 module.exports = function(ngModule) {
 
-    ngModule.controller('ssAccountEditPageController', function($location, $scope, AccountApi, AuthService, HashService, SalaryRanges) {
+    ngModule.controller('ssAccountEditPageController', function($location, $scope, AccountApi, AuthService, FormService, HashService, SalaryRanges) {
 
         $scope.updateAccount = function() {
 
             $scope.isSaving = true;
             $scope.errors = [];
-            var name = $scope.input.name;
-            var email = $scope.input.email;
 
-            var changeset = {};
-            if (name && name !== AuthService.account.name) {
-                // name can be anything, just not empty
-                changeset.name = name;
-            }
-
-            if (email && email !== AuthService.account.email) {
-                changeset.email = email;
-            }
+            var changeset = FormService.buildChangeset($scope.input, AuthService.account);
 
             // Make sure the user changed something before bothering the server
             if (angular.equals({}, changeset)) {
