@@ -2,7 +2,7 @@
 
 module.exports = function(ngModule) {
 
-    ngModule.controller('ssResumeProjectsPageController', function($scope, ResumeService) {
+    ngModule.controller('ssResumeProjectsPageController', function($scope, NavigationService, ResumeService) {
 
         $scope.removeProject = function(proj2delete) {
             ResumeService.removeProject(proj2delete);
@@ -36,6 +36,8 @@ module.exports = function(ngModule) {
             $scope.input = {};
             ResumeService.initResume();
             $scope.ResumeService = ResumeService;
+
+            NavigationService = 'resume';
         };
         initialize();
     });

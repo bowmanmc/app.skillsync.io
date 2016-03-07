@@ -2,7 +2,7 @@
 
 module.exports = function(ngModule) {
 
-    ngModule.controller('ssAccountEditPageController', function($location, $scope, AccountApi, AuthService, FormService, HashService, SalaryRanges) {
+    ngModule.controller('ssAccountEditPageController', function($location, $scope, AccountApi, AuthService, FormService, HashService, NavigationService, SalaryRanges) {
 
         $scope.updateAccount = function() {
 
@@ -52,6 +52,8 @@ module.exports = function(ngModule) {
             $scope.input = {};
             $scope.SalaryRanges = SalaryRanges;
             $scope.AuthService = AuthService;
+
+            NavigationService.currentPage = 'account';
 
             $scope.$watch('AuthService.account', function() {
                 var hash = '';

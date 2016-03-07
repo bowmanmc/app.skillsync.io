@@ -7,6 +7,7 @@ module.exports = function(ngModule) {
     require('./HashService')(ngModule);
     require('./JobCategories')(ngModule);
     require('./LocalStorageService')(ngModule);
+    require('./NavigationService')(ngModule);
     require('./ResumeService')(ngModule);
     require('./SalaryRanges')(ngModule);
 

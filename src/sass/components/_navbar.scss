@@ -1,26 +1,36 @@
+$navbar-transition: all 0.27s ease-in-out;
+
 .navbar {
     box-shadow: 0 0 1.0em #333;
-    color: $color-txt;
     font-size: 90%;
     left: 0;
     position: absolute;
     right: 0;
     top: 0;
+    transition: $navbar-transition;
     width: 100%;
     z-index: 10;
 
-    @include linear-gradient(to bottom, lighten($color-light-grey, 15%), darken($color-light-grey, 0%));
+    //@include linear-gradient(to bottom, lighten($color-light-grey, 15%), darken($color-light-grey, 0%));
     //@include linear-gradient(to bottom, $color-green, darken($color-green, 10%));
+    @include linear-gradient(to bottom, lighten($color-txt, 5%), darken($color-txt, 5%));
 }
 
 $navbar-link-radius: 0.25em;
 .navbar__link {
+    border-bottom: 3px solid transparent;
+    color: $color-light-grey;
+    cursor: pointer;
     display: inline-block;
     margin: 0.25em 0;
+    margin-bottom: 1px;
     padding: 0.25em 1.0em;
     text-align: center;
+    transition: $navbar-transition;
 }
-.navbar__link-selected {
+.navbar__link-selected, .navbar__link:hover {
+    border-bottom: 3px solid $color-green;
+    color: #ffffff;
 }
 
 .navbar__link-icon {

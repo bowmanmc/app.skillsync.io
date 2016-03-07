@@ -3,26 +3,26 @@
 
     <ul role="navigation">
 
-        <li class="navbar__link navbar__logo">
-            <a href="#/"><img src="/images/skillsync-logo-dark-text.svg" alt="SkillSync" /></a>
+        <li class="navbar__logo">
+            <a href="#/"><img src="/images/skillsync-logo-light-text.svg" alt="SkillSync" /></a>
         </li>
 
-        <li class="navbar__link navbar__link-selected">
-            <a ng-click="goto('/')">
-                <span class="navbar__link-txt">Dashboard</span>
-            </a>
+        <li class="navbar__link"
+            ng-class="{'navbar__link-selected': NavigationService.currentPage === 'dashboard'}"
+            ng-click="NavigationService.goto('/')">
+            <span class="navbar__link-txt">Dashboard</span>
         </li>
 
-        <li class="navbar__link navbar__link-selected">
-            <a ng-click="goto('/resume')">
-                <span class="navbar__link-txt">Resume</span>
-            </a>
+        <li class="navbar__link"
+            ng-class="{'navbar__link-selected': NavigationService.currentPage === 'resume'}"
+            ng-click="NavigationService.goto('/resume')">
+            <span class="navbar__link-txt">Resume</span>
         </li>
 
-        <li class="navbar__link">
-            <a ng-click="goto('/account')">
-                <span class="navbar__link-txt">Account</span>
-            </a>
+        <li class="navbar__link"
+            ng-class="{'navbar__link-selected': NavigationService.currentPage === 'account'}"
+            ng-click="NavigationService.goto('/account')">
+            <span class="navbar__link-txt">Account</span>
         </li>
 
     </ul>

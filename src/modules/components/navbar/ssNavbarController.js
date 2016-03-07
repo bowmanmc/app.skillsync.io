@@ -2,11 +2,7 @@
 
 module.exports = function(ngModule) {
 
-    ngModule.controller('ssNavbarController', function($location, $scope, AuthService) {
-
-        $scope.goto = function(path) {
-            $location.path(path);
-        };
+    ngModule.controller('ssNavbarController', function($location, $scope, AuthService, NavigationService) {
 
         var initialize = function() {
 
@@ -14,6 +10,7 @@ module.exports = function(ngModule) {
             // navigation bar
             AuthService.loadAccount();
             $scope.AuthService = AuthService;
+            $scope.NavigationService = NavigationService;
 
             $scope.$watch('AuthService.token', function() {
                 if(!AuthService.getToken()) {
