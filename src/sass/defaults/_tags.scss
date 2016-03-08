@@ -13,13 +13,16 @@ body {
 a {
     color: $color-dark-teal;
     cursor: pointer;
+    fill: $color-dark-teal;
     text-decoration: none;
 
     &:hover {
         color: $color-teal;
+        fill: $color-teal;
     }
     &:active {
         color: $color-teal;
+        fill: $color-teal;
     }
 }
 
