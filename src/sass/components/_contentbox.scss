@@ -1,11 +1,6 @@
 
 .contentbox {
-
-    border-radius: 0.5em;
-    //box-shadow: 0 0 1.0em #333;
-    padding: 1.5em 1.0em;
-
-    //@include linear-gradient(to bottom, $color-light-grey, darken($color-light-grey, 10%));
+    padding: 1.0em;
 
     h1 {
         border-bottom: 1px solid darken($color-light-grey, 10%);
@@ -14,9 +9,11 @@
         text-align: left;
     }
 }
+
 .contentbox__form-buttons {
     margin: 1.5em auto;
 }
+
 .contentbox__form-errors {
     background: lighten($color-light-grey, 3%);
     border: 1px solid $color-contrast;
