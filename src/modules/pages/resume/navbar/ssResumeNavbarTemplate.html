@@ -1,4 +1,4 @@
-
+<!-- Sidebar for Large Screens -->
 <div class="resume__nav-side">
     <ul>
         <li><a ng-click="goto('/resume')">Resume</a></li>
@@ -15,12 +15,14 @@
         </svg>
     </div>
 </div>
+
+<!-- Dropdown for Mobile Users -->
 <div class="resume__nav-drop">
     <select ng-change="select()" ng-model="input.selection">
         <option value='/resume'>Resume</option>
         <option value='/resume/summary'>Summary</option>
         <option value='/resume/category'>Job Category</option>
-        <option value='/resume/skills'>Skill</option>
+        <option value='/resume/skills'>Skills</option>
         <option value='/resume/projects'>Projects</option>
         <option value='/resume/work'>Work History</option>
         <option value='/resume/education'>Education &amp; Certifications</option>
