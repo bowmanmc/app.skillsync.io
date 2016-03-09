@@ -2,14 +2,11 @@
 
 module.exports = function(ngModule) {
 
-    ngModule.controller('ssResumePageController', function($scope, NavigationService, ResumeService) {
+    ngModule.controller('ssResumePageController', function($scope, ResumeService) {
 
         var initialize = function() {
             ResumeService.initResume();
             $scope.ResumeService = ResumeService;
-
-            NavigationService.currentPage = 'resume';
-
         };
         initialize();
     });

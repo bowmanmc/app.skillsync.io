@@ -16,7 +16,7 @@
     </div>
 </div>
 <div class="resume__nav-drop">
-    <select>
+    <select ng-change="select()" ng-model="input.selection">
         <option value='/resume'>Resume</option>
         <option value='/resume/summary'>Summary</option>
         <option value='/resume/category'>Job Category</option>
