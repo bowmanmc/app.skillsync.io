@@ -12,18 +12,13 @@
     }
 }
 
-.resume__nav {
-
-    background: darken($color-light-grey, 3%);
-    border-radius: 0.25em;
-    margin-bottom: 1.5em;
+.resume__nav-side {
 
     ul {
     }
 
     li {
-        //display: inline-block;
-        padding: 0.5em 1.0em;
+        padding: 0.25em 0.5em;
     }
 }
 .resume__nav-activity {
@@ -78,6 +73,10 @@
 }
 
 .resume__sidebar {
+    background: $color-light-grey;
+    border-radius: 0.5em;
+    padding: 0.5em;
+
     @include span-columns(12);
 
     @include media ($tablet-portrait) {

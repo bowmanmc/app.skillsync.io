@@ -1,73 +1,78 @@
 <div class="page contentbox">
 
-    <ss-resume-navbar></ss-resume-navbar>
+    <div class="resume__sidebar">
+        <ss-resume-navbar></ss-resume-navbar>
+    </div>
+    <div class="resume__content">
 
-    <div class="page__cols">
-        <div class="page__col">
-            <form class="resume__form form">
+        <div class="page__cols">
+            <div class="page__col">
+                <form class="resume__form form">
 
-                <label>
-                    <input type="text" placeholder="Institution Name"
-                        ng-model="input.institution"
-                        ng-class="{'populated': input.institution.length > 0}" />
-                    <span>Institution Name</span>
-                </label>
+                    <label>
+                        <input type="text" placeholder="Institution Name"
+                            ng-model="input.institution"
+                            ng-class="{'populated': input.institution.length > 0}" />
+                        <span>Institution Name</span>
+                    </label>
 
-                <label>
-                    <input type="text" placeholder="Institution Website"
-                        ng-model="input.url"
-                        ng-class="{'populated': input.url.length > 0}" />
-                    <span>Institution Website</span>
-                </label>
+                    <label>
+                        <input type="text" placeholder="Institution Website"
+                            ng-model="input.url"
+                            ng-class="{'populated': input.url.length > 0}" />
+                        <span>Institution Website</span>
+                    </label>
 
-                <label>
-                    <input type="text" placeholder="Start Date"
-                        ng-model="input.startDate"
-                        ng-class="{'populated': input.startDate.length > 0}" />
-                    <span>Start Date</span>
-                </label>
+                    <label>
+                        <input type="text" placeholder="Start Date"
+                            ng-model="input.startDate"
+                            ng-class="{'populated': input.startDate.length > 0}" />
+                        <span>Start Date</span>
+                    </label>
 
-                <label>
-                    <input type="text" placeholder="Graduation Date"
-                        ng-model="input.endDate"
-                        ng-class="{'populated': input.endDate.length > 0}" />
-                    <span>End Date</span>
-                </label>
+                    <label>
+                        <input type="text" placeholder="Graduation Date"
+                            ng-model="input.endDate"
+                            ng-class="{'populated': input.endDate.length > 0}" />
+                        <span>End Date</span>
+                    </label>
 
-                <label>
-                    <input type="text" placeholder="Credential"
-                        ng-model="input.credential"
-                        ng-class="{'populated': input.credential.length > 0}" />
-                    <span>Credential</span>
-                </label>
+                    <label>
+                        <input type="text" placeholder="Credential"
+                            ng-model="input.credential"
+                            ng-class="{'populated': input.credential.length > 0}" />
+                        <span>Credential</span>
+                    </label>
 
-                <div class="resume__skills-btn">
-                    <button type="submit" ng-disabled="isSaving" ng-click="saveEducation()">
-                        <span ng-show="isSaving">
-                            <svg class="form__button-icon spinner">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-spinner2"></use>
-                            </svg>
-                        </span>
-                        <span ng-hide="isSaving">Add Education or Certification</span>
-                    </button>
+                    <div class="resume__skills-btn">
+                        <button type="submit" ng-disabled="isSaving" ng-click="saveEducation()">
+                            <span ng-show="isSaving">
+                                <svg class="form__button-icon spinner">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-spinner2"></use>
+                                </svg>
+                            </span>
+                            <span ng-hide="isSaving">Add Education or Certification</span>
+                        </button>
+                    </div>
+
+                    <ul class="contentbox__form-errors" ng-show="errors.length">
+                        <li ng-repeat="error in errors">* {{error}}</li>
+                    </ul>
+                </form>
+            </div>
+
+            <div class="page__col">
+
+                <div class="resume__edu" ng-repeat="item in ResumeService.resume.education">
+                    {{ item.institution }}
+
+                    <a class="resume__remove-icon" ng-click="removeEducation(item)">
+                        <svg class="form__button-icon">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-cancel-circle"></use>
+                        </svg>
+                    </a>
                 </div>
 
-                <ul class="contentbox__form-errors" ng-show="errors.length">
-                    <li ng-repeat="error in errors">* {{error}}</li>
-                </ul>
-            </form>
-        </div>
-
-        <div class="page__col">
-
-            <div class="resume__edu" ng-repeat="item in ResumeService.resume.education">
-                {{ item.institution }}
-
-                <a class="resume__remove-icon" ng-click="removeEducation(item)">
-                    <svg class="form__button-icon">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-cancel-circle"></use>
-                    </svg>
-                </a>
             </div>
 
         </div>

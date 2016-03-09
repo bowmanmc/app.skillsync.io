@@ -1,40 +1,44 @@
 
 <div class="page contentbox">
 
-    <ss-resume-navbar></ss-resume-navbar>
+    <div class="resume__sidebar">
+        <ss-resume-navbar></ss-resume-navbar>
+    </div>
+    <div class="resume__content">
 
-    <form class="resume__form">
-        <div class="page__cols">
+        <form class="resume__form">
+            <div class="page__cols">
 
-            <div class="page__col">
-                <fieldset>
-                    <legend>Job Category</legend>
-                    <p>
-                        Please enter the general category of job you are
-                        looking for.
-                    </p>
-                    <select ng-model="input.category">
-                        <option value="" disabled>Job Category</option>
-                        <option ng-repeat="category in JobCategories">
-                            {{ category}}
-                        </option>
-                    </select>
-                </fieldset>
+                <div class="page__col">
+                    <fieldset>
+                        <legend>Job Category</legend>
+                        <p>
+                            Please enter the general category of job you are
+                            looking for.
+                        </p>
+                        <select ng-model="input.category">
+                            <option value="" disabled>Job Category</option>
+                            <option ng-repeat="category in JobCategories">
+                                {{ category}}
+                            </option>
+                        </select>
+                    </fieldset>
+                </div>
             </div>
-        </div>
 
-        <button type="submit" ng-disabled="isSaving" ng-click="saveChanges()">
-            <span ng-show="isSaving">
-                <svg class="form__button-icon spinner">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-spinner2"></use>
-                </svg>
-            </span>
-            <span ng-hide="isSaving">Save Changes</span>
-        </button>
+            <button type="submit" ng-disabled="isSaving" ng-click="saveChanges()">
+                <span ng-show="isSaving">
+                    <svg class="form__button-icon spinner">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-spinner2"></use>
+                    </svg>
+                </span>
+                <span ng-hide="isSaving">Save Changes</span>
+            </button>
 
-        <ul class="contentbox__form-errors" ng-show="errors.length">
-            <li ng-repeat="error in errors">* {{error}}</li>
-        </ul>
-    </form>
+            <ul class="contentbox__form-errors" ng-show="errors.length">
+                <li ng-repeat="error in errors">* {{error}}</li>
+            </ul>
+        </form>
+    </div>
 
 </div><!-- mainpage -->

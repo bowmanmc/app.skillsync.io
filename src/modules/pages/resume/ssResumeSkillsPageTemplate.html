@@ -1,67 +1,71 @@
 <div class="page contentbox">
 
-    <ss-resume-navbar></ss-resume-navbar>
+    <div class="resume__sidebar">
+        <ss-resume-navbar></ss-resume-navbar>
+    </div>
+    <div class="resume__content">
 
-    <div class="page__cols">
-        <div class="page__col">
-            <form class="resume__form">
-                <fieldset>
-                    <!-- legend>Skills</legend -->
-                    <p>
-                        Please enter up to 6 skills, languages, tools,
-                        or frameworks you want to use in your next
-                        job. These do not have to correspond to your current
-                        experience or responsibilities in any way. Tell us what
-                        you're passionate about.
-                    </p>
+        <div class="page__cols">
+            <div class="page__col">
+                <form class="resume__form">
+                    <fieldset>
+                        <!-- legend>Skills</legend -->
+                        <p>
+                            Please enter up to 6 skills, languages, tools,
+                            or frameworks you want to use in your next
+                            job. These do not have to correspond to your current
+                            experience or responsibilities in any way. Tell us what
+                            you're passionate about.
+                        </p>
 
-                    <div class="resume__skills-inputs">
-                        <div class="resume__skills-input">
-                            <input type="text"
-                                placeholder="Skill Name"
-                                ng-model="input.skill"
-                                ng-class="{'populated': input.skill}" />
+                        <div class="resume__skills-inputs">
+                            <div class="resume__skills-input">
+                                <input type="text"
+                                    placeholder="Skill Name"
+                                    ng-model="input.skill"
+                                    ng-class="{'populated': input.skill}" />
+                            </div>
+                            <div class="resume__skills-input">
+                                <select ng-model="input.level">
+                                    <option value="" disabled>Level</option>
+                                    <option value="Beginner">Beginner</option>
+                                    <option value="Intermediate">Intermediate</option>
+                                    <option value="Expert">Expert</option>
+                                </select>
+                            </div>
                         </div>
-                        <div class="resume__skills-input">
-                            <select ng-model="input.level">
-                                <option value="" disabled>Level</option>
-                                <option value="Beginner">Beginner</option>
-                                <option value="Intermediate">Intermediate</option>
-                                <option value="Expert">Expert</option>
-                            </select>
+                        <div class="resume__skills-btn">
+                            <button type="submit" ng-disabled="isSaving" ng-click="saveSkill()">
+                                <span ng-show="isSaving">
+                                    <svg class="form__button-icon spinner">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-spinner2"></use>
+                                    </svg>
+                                </span>
+                                <span ng-hide="isSaving">Add Skill</span>
+                            </button>
                         </div>
-                    </div>
-                    <div class="resume__skills-btn">
-                        <button type="submit" ng-disabled="isSaving" ng-click="saveSkill()">
-                            <span ng-show="isSaving">
-                                <svg class="form__button-icon spinner">
-                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-spinner2"></use>
-                                </svg>
-                            </span>
-                            <span ng-hide="isSaving">Add Skill</span>
-                        </button>
-                    </div>
 
-                    <ul class="contentbox__form-errors" ng-show="errors.length">
-                        <li ng-repeat="error in errors">* {{error}}</li>
-                    </ul>
-                </fieldset>
-            </form>
-        </div>
+                        <ul class="contentbox__form-errors" ng-show="errors.length">
+                            <li ng-repeat="error in errors">* {{error}}</li>
+                        </ul>
+                    </fieldset>
+                </form>
+            </div>
 
-        <div class="page__col">
+            <div class="page__col">
 
-            <div class="resume__skill resume__skill-level-{{ skill.level }}" ng-repeat="skill in ResumeService.resume.skills">
-                {{ skill.skill }}
-                <a class="resume__skill-remove-icon" ng-click="removeSkill(skill)">
-                    <svg class="form__button-icon">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-cancel-circle"></use>
-                    </svg>
-                </a>
+                <div class="resume__skill resume__skill-level-{{ skill.level }}" ng-repeat="skill in ResumeService.resume.skills">
+                    {{ skill.skill }}
+                    <a class="resume__skill-remove-icon" ng-click="removeSkill(skill)">
+                        <svg class="form__button-icon">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-cancel-circle"></use>
+                        </svg>
+                    </a>
+                </div>
+
             </div>
 
         </div>
 
     </div>
-
 </div><!-- page -->
