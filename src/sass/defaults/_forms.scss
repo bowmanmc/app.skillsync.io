@@ -95,15 +95,16 @@ $forms-bg-focus: #ffffff;
     margin: 0.75em auto;
     padding: 0.5em 1.0em;
     outline: none;
-    text-shadow: 1px 1px 1px darken($color-dark-green, 5%);
+    text-shadow: 1px 1px 0px darken($color-dark-green, 5%);
     transition: $forms-transition;
 }
 
 #{$all-buttons-focus},
 #{$all-buttons-hover} {
-    border: 1px solid $color-light-green;
+    border: 1px solid $color-dark-green;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.27);
     color: #fff;
-    text-shadow: 1px 1px 1px darken($color-dark-green, 5%);
+    text-shadow: 1px 1px 0px darken($color-dark-green, 10%);
 }
 
 textarea {
