@@ -1,5 +1,20 @@
+.resume__content {
+    @include span-columns(12);
+
+    @include media ($tablet-portrait) {
+        @include span-columns(9);
+    }
+    @include media ($tablet-landscape) {
+        @include span-columns(9);
+    }
+    @include media ($desktop) {
+        @include span-columns(9);
+    }
+}
 
 .resume__form {
+    margin: 0 auto;
+    max-width: 768px;
 
     legend {
         color: $color-txt;
@@ -34,6 +49,7 @@
 
 .resume__nav-drop {
     display: block;
+
     @include media ($tablet-portrait) {
         display: none;
     }
@@ -46,6 +62,7 @@
 }
 .resume__nav-side {
     display: none;
+
     @include media ($tablet-portrait) {
         display: block;
     }
@@ -75,6 +92,7 @@
 .resume__sidebar {
     background: $color-light-grey;
     border-radius: 0.5em;
+    margin-bottom: 1.0em;
     padding: 0.5em;
 
     @include span-columns(12);
@@ -89,19 +107,7 @@
         @include span-columns(3);
     }
 }
-.resume__content {
-    @include span-columns(12);
 
-    @include media ($tablet-portrait) {
-        @include span-columns(9);
-    }
-    @include media ($tablet-landscape) {
-        @include span-columns(9);
-    }
-    @include media ($desktop) {
-        @include span-columns(9);
-    }
-}
 
 .resume__skills-btn {
     @include outer-container(100%);

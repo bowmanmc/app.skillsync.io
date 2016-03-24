@@ -1,21 +1,13 @@
 .page {
     margin: 1.5em;
     margin-top: 50px;
-}
-
-.page__cols {
+    padding: 1.0em;
     @include outer-container(100%);
 
-    .page__col {
-        @include span-columns(12);
-
-        @include media ($tablet-landscape) {
-            @include span-columns(6);
-            @include omega(2n);
-        }
-        @include media ($desktop) {
-            @include span-columns(6);
-            @include omega(2n);
-        }
+    h1 {
+        border-bottom: 1px solid darken($color-light-grey, 10%);
+        font-size: 2.5em;
+        margin-bottom: 0.75em;
+        text-align: left;
     }
 }

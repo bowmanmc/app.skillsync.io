@@ -1,30 +1,26 @@
 
-<div class="page contentbox">
+<div class="page">
 
     <div class="resume__sidebar">
         <ss-resume-navbar></ss-resume-navbar>
     </div>
+
     <div class="resume__content">
 
         <form class="resume__form">
-            <div class="page__cols">
-
-                <div class="page__col">
-                    <fieldset>
-                        <legend>Job Category</legend>
-                        <p>
-                            Please enter the general category of job you are
-                            looking for.
-                        </p>
-                        <select ng-model="input.category">
-                            <option value="" disabled>Job Category</option>
-                            <option ng-repeat="category in JobCategories">
-                                {{ category}}
-                            </option>
-                        </select>
-                    </fieldset>
-                </div>
-            </div>
+            <fieldset>
+                <legend>Job Category</legend>
+                <p>
+                    Please enter the general category of job you are
+                    looking for.
+                </p>
+                <select ng-model="input.category">
+                    <option value="" disabled>Job Category</option>
+                    <option ng-repeat="category in JobCategories">
+                        {{ category}}
+                    </option>
+                </select>
+            </fieldset>
 
             <button type="submit" ng-disabled="isSaving" ng-click="saveChanges()">
                 <span ng-show="isSaving">

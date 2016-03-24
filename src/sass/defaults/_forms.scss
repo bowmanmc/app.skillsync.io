@@ -116,3 +116,17 @@ textarea {
     height: modular-scale(1);
     width: modular-scale(1);
 }
+
+.form__errors {
+    background: lighten($color-light-grey, 3%);
+    border: 1px solid $color-contrast;
+    border-radius: 0.25em;
+    color: $color-contrast;
+    margin: 1.0em 0;
+    padding: 1.0em;
+    text-align: left;
+
+    li {
+        margin-bottom: 0.5em;
+    }
+}
