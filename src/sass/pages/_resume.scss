@@ -106,6 +106,10 @@
     @include media ($desktop) {
         @include span-columns(3);
     }
+
+    select {
+        background: $color-light url(../images/dropdown.png) 95% 50% no-repeat;
+    }
 }
 
 
