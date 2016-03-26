@@ -33,8 +33,14 @@
     }
 
     li {
+        border-left: 3px solid transparent;
         padding: 0.25em 0.5em;
     }
+
+    li.resume__nav-current {
+        border-left: 3px solid $color-teal;
+    }
+
 }
 .resume__nav-activity {
 

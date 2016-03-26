@@ -2,7 +2,7 @@
 
 module.exports = function(ngModule) {
 
-    ngModule.controller('ssResumeEducationPageController', function($scope, ResumeService) {
+    ngModule.controller('ssResumeEducationPageController', function($scope, NavigationService, ResumeService) {
 
         $scope.removeEducation = function(edu2delete) {
             ResumeService.removeEducation(edu2delete);
@@ -39,6 +39,10 @@ module.exports = function(ngModule) {
             $scope.input = {};
             ResumeService.initResume();
             $scope.ResumeService = ResumeService;
+            $scope.NavigationService = NavigationService;
+
+            NavigationService.currentPage = 'resume';
+            NavigationService.resumePage = 'education';
         };
         initialize();
     });

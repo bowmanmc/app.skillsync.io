@@ -1,20 +1,37 @@
 <!-- Sidebar for Large Screens -->
 <div class="resume__nav-side">
     <ul>
-        <li><a ng-click="goto('/resume')">Resume</a></li>
-        <li><a ng-click="goto('/resume/category')">Job Category</a></li>
-        <li><a ng-click="goto('/resume/summary')">Summary</a></li>
-        <li><a ng-click="goto('/resume/skills')">Skills</a></li>
-        <li><a ng-click="goto('/resume/projects')">Projects</a></li>
-        <li><a ng-click="goto('/resume/work')">Work History</a></li>
-        <li><a ng-click="goto('/resume/education')">Education &amp; Certifications</a></li>
+        <li ng-class="{'resume__nav-current': NavigationService.resumePage === 'resume'}">
+            <a ng-click="NavigationService.goto('/resume')">Resume</a>
+        </li>
+        <li ng-class="{'resume__nav-current': NavigationService.resumePage === 'category'}">
+            <a ng-click="NavigationService.goto('/resume/category')">Job Category</a>
+        </li>
+        <li ng-class="{'resume__nav-current': NavigationService.resumePage === 'summary'}">
+            <a ng-click="NavigationService.goto('/resume/summary')">Summary</a>
+        </li>
+        <li ng-class="{'resume__nav-current': NavigationService.resumePage === 'skills'}">
+            <a ng-click="NavigationService.goto('/resume/skills')">Skills</a>
+        </li>
+        <li ng-class="{'resume__nav-current': NavigationService.resumePage === 'projects'}">
+            <a ng-click="NavigationService.goto('/resume/projects')">Projects</a>
+        </li>
+        <li ng-class="{'resume__nav-current': NavigationService.resumePage === 'work'}">
+            <a ng-click="NavigationService.goto('/resume/work')">Work History</a>
+        </li>
+        <li ng-class="{'resume__nav-current': NavigationService.resumePage === 'education'}">
+            <a ng-click="NavigationService.goto('/resume/education')">Education &amp; Certifications</a>
+        </li>
     </ul>
+
     <div class="resume__nav-activity" ng-show="ResumeService.isLoading">
         <svg class="spinner">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-spinner2"></use>
         </svg>
     </div>
-</div>
+
+</div><!-- resume__nav-side -->
+
 
 <!-- Dropdown for Mobile Users -->
 <div class="resume__nav-drop">

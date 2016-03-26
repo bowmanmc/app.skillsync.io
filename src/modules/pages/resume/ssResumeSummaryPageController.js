@@ -2,7 +2,7 @@
 
 module.exports = function(ngModule) {
 
-    ngModule.controller('ssResumeSummaryPageController', function($scope, ResumeService) {
+    ngModule.controller('ssResumeSummaryPageController', function($scope, NavigationService, ResumeService) {
 
         $scope.saveChanges = function() {
             $scope.errors = [];
@@ -41,6 +41,10 @@ module.exports = function(ngModule) {
             $scope.errors = [];
             ResumeService.initResume();
             $scope.ResumeService = ResumeService;
+            $scope.NavigationService = NavigationService;
+
+            NavigationService.currentPage = 'resume';
+            NavigationService.resumePage = 'summary';
 
             $scope.$watch('ResumeService.resume', function() {
                 console.log('ResumeService.resume changed!');
