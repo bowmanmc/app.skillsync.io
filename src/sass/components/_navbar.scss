@@ -1,7 +1,7 @@
 $navbar-transition: all 0.27s ease-in-out;
 
 .navbar {
-    box-shadow: 0 0 1.0em #333;
+    box-shadow: 0 0 1.0em transparentize($color-txt, .65);
     font-size: 90%;
     left: 0;
     position: absolute;
@@ -11,8 +11,6 @@ $navbar-transition: all 0.27s ease-in-out;
     width: 100%;
     z-index: 10;
 
-    //@include linear-gradient(to bottom, lighten($color-light-grey, 15%), darken($color-light-grey, 0%));
-    //@include linear-gradient(to bottom, $color-green, darken($color-green, 10%));
     @include linear-gradient(to bottom, lighten($color-txt, 5%), darken($color-txt, 5%));
 }
 

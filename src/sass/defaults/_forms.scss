@@ -91,10 +91,11 @@ select:hover {
             color: $color-txt-light;
             font-size: 12px;
             font-weight: bold;
+            left: 0.75em;
+            letter-spacing: 0.55px;
+            opacity: 0;
             position: absolute;
             top: 0px;
-            left: 0.75em;
-            opacity: 0;
             transition: $forms-transition;
         }
     }
@@ -111,9 +112,11 @@ select:hover {
     cursor: pointer;
     display: block;
     font-size: modular-scale(1);
+    letter-spacing: 0.033em;
     margin: 0.75em auto;
     padding: 0.5em 1.0em;
     outline: none;
+    text-rendering: optimizeLegibility;
     text-shadow: 1px 1px 0px darken($color-dark-green, 5%);
     transition: $forms-transition;
 }
@@ -128,6 +131,10 @@ select:hover {
 
 textarea {
     resize: none;
+}
+
+.form {
+    padding: 0.25em 0;
 }
 
 .form__button-icon {
