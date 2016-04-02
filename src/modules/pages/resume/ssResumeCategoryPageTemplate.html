@@ -7,13 +7,15 @@
 
     <div class="resume__content">
 
+        <h1>Job Category</h1>
+
+        <p>
+            How would you categorize the type of position you're looking for?
+            Would you consider yourself a designer or more of a developer?
+        </p>
+
         <form class="resume__form">
             <fieldset>
-                <legend>Job Category</legend>
-                <p>
-                    Please enter the general category of job you are
-                    looking for.
-                </p>
                 <select ng-model="input.category">
                     <option value="" disabled>Job Category</option>
                     <option ng-repeat="category in JobCategories">
