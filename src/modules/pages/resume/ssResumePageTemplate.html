@@ -1,30 +1,203 @@
 
-<div class="page contentbox">
+<div class="page">
 
-    <div class="resume__sidebar">
-        <ss-resume-navbar></ss-resume-navbar>
+    <div class="resume__form">
+        <!-- Job Category -->
+        <div class="resume__field">
+            <div class="resume__field-name">
+                <span>Job Category</span>
+            </div>
+            <div class="resume__field-input">
+                <select ng-model="input.category">
+                    <option value="" disabled>Job Category</option>
+                    <option ng-repeat="category in JobCategories">
+                        {{ category }}
+                    </option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Summary -->
+        <div class="resume__field">
+            <div class="resume__field-name">
+                <span>Profile</span>
+            </div>
+            <div class="resume__field-input">
+                <textarea name="textarea"
+                    ng-model="input.summary"
+                    rows="10"
+                    cols="50"></textarea>
+            </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="resume__field">
+            <div class="resume__field-name">
+                Skills
+            </div>
+            <div class="resume__field-input">
+                <div class="resume__skills-input">
+                    <input type="text"
+                        placeholder="Skill Name"
+                        ng-model="input.skill"
+                        ng-class="{'populated': input.skill}" />
+                </div>
+                <div class="resume__skills-input">
+                    <select ng-model="input.level">
+                        <option value="" disabled>Level</option>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Expert">Expert</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="resume__field">
+            <div class="resume__field-name">
+                Projects
+            </div>
+            <div class="resume__field-input">
+                <label>
+                    <input type="text" placeholder="Project Name"
+                        ng-model="input.name"
+                        ng-class="{'populated': input.name.length > 0}" />
+                    <span>Project Name</span>
+                </label>
+
+                <label>
+                    <input type="text" placeholder="Project Website"
+                        ng-model="input.url"
+                        ng-class="{'populated': input.url.length > 0}" />
+                    <span>Project Website</span>
+                </label>
+
+                <label>
+                    <input type="text" placeholder="Project Repository"
+                        ng-model="input.repo"
+                        ng-class="{'populated': input.repo.length > 0}" />
+                    <span>Project Repository</span>
+                </label>
+
+                <label>
+                    <input type="text" placeholder="Start Date"
+                        ng-model="input.startDate"
+                        ng-class="{'populated': input.startDate.length > 0}" />
+                    <span>Start Date</span>
+                </label>
+
+                <label>
+                    <input type="text" placeholder="End Date"
+                        ng-model="input.endDate"
+                        ng-class="{'populated': input.endDate.length > 0}" />
+                    <span>End Date</span>
+                </label>
+
+                <label>
+                    <textarea name="textarea"
+                        ng-model="input.description"
+                        placeholder="Description"
+                        rows="5"></textarea>
+                    <span>Description</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Work History -->
+        <div class="resume__field">
+            <div class="resume__field-name">
+                Work History
+            </div>
+            <div class="resume__field-input">
+                <label>
+                    <input type="text" placeholder="Employer Name"
+                        ng-model="input.name"
+                        ng-class="{'populated': input.name.length > 0}" />
+                    <span>Employer Name</span>
+                </label>
+
+                <label>
+                    <input type="text" placeholder="Employer Website"
+                        ng-model="input.url"
+                        ng-class="{'populated': input.url.length > 0}" />
+                    <span>Employer Website</span>
+                </label>
+
+                <label>
+                    <input type="text" placeholder="Job Title"
+                        ng-model="input.title"
+                        ng-class="{'populated': input.title.length > 0}" />
+                    <span>Job Title</span>
+                </label>
+
+                <label>
+                    <input type="text" placeholder="Start Date"
+                        ng-model="input.startDate"
+                        ng-class="{'populated': input.startDate.length > 0}" />
+                    <span>Start Date</span>
+                </label>
+
+                <label>
+                    <input type="text" placeholder="End Date"
+                        ng-model="input.endDate"
+                        ng-class="{'populated': input.endDate.length > 0}" />
+                    <span>End Date</span>
+                </label>
+
+                <label>
+                    <textarea name="textarea"
+                        ng-model="input.description"
+                        placeholder="Description"
+                        rows="5"></textarea>
+                    <span>Description</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="resume__field">
+            <div class="resume__field-name">
+                Education &amp; Certifications
+            </div>
+            <div class="resume__field-input">
+                <label>
+                    <input type="text" placeholder="Institution Name"
+                        ng-model="input.institution"
+                        ng-class="{'populated': input.institution.length > 0}" />
+                    <span>Institution Name</span>
+                </label>
+
+                <label>
+                    <input type="text" placeholder="Institution Website"
+                        ng-model="input.url"
+                        ng-class="{'populated': input.url.length > 0}" />
+                    <span>Institution Website</span>
+                </label>
+
+                <label>
+                    <input type="text" placeholder="Start Date"
+                        ng-model="input.startDate"
+                        ng-class="{'populated': input.startDate.length > 0}" />
+                    <span>Start Date</span>
+                </label>
+
+                <label>
+                    <input type="text" placeholder="Graduation Date"
+                        ng-model="input.endDate"
+                        ng-class="{'populated': input.endDate.length > 0}" />
+                    <span>End Date</span>
+                </label>
+
+                <label>
+                    <input type="text" placeholder="Credential"
+                        ng-model="input.credential"
+                        ng-class="{'populated': input.credential.length > 0}" />
+                    <span>Credential</span>
+                </label>
+            </div>
+        </div>
+
     </div>
-    <div class="resume__content">
 
-        <h1>Current Resume</h1>
-        <p>
-            Here's the content for your resume.
-        </p>
-
-        <h2>Job Category</h2>
-        <p>{{ ResumeService.resume.category }}</p>
-
-        <h2>Summary</h2>
-        <p>{{ ResumeService.resume.summary }}</p>
-
-        <h2>Skills</h2>
-
-        <h2>Projects</h2>
-
-        <h2>Work History</h2>
-
-        <h2>Education &amp; Certifications</h2>
-
-    </div>
-
-</div><!-- mainpage -->
+</div>

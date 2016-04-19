@@ -1,169 +1,56 @@
-.resume__content {
-    @include span-columns(12);
-
-    @include media ($tablet-portrait) {
-        @include span-columns(9);
-    }
-    @include media ($tablet-landscape) {
-        @include span-columns(9);
-    }
-    @include media ($desktop) {
-        @include span-columns(9);
-    }
-}
+$resume-max-width: 1024px;
 
 .resume__form {
-    margin: 0 auto;
-    max-width: 768px;
+    @include outer-container(100%);
 
-    legend {
-        color: $color-txt;
-        //font-size: 1.5em;
-        font-weight: bold;
-    }
-
-    p {
-        //font-size: 0.9em;
-    }
-}
-
-.resume__nav-side {
-
-    ul {
-    }
-
-    li {
-        border-left: 3px solid transparent;
-        padding: 0.25em 0.5em;
-    }
-
-    li.resume__nav-current {
-        border-left: 3px solid $color-teal;
-    }
-
-}
-.resume__nav-activity {
-
-    float: right;
-
-    svg {
-        fill: $color-txt;
-        height: 12px;
-        width: 12px;
-    }
-}
-
-.resume__nav-drop {
-    display: block;
-
-    @include media ($tablet-portrait) {
-        display: none;
-    }
     @include media ($tablet-landscape) {
-        display: none;
+        @include outer-container($resume-max-width);
     }
     @include media ($desktop) {
-        display: none;
-    }
-}
-.resume__nav-side {
-    display: none;
-
-    @include media ($tablet-portrait) {
-        display: block;
-    }
-    @include media ($tablet-landscape) {
-        display: block;
-    }
-    @include media ($desktop) {
-        display: block;
+        @include outer-container($resume-max-width);
     }
 }
 
-.resume__remove-icon {
-    float: right;
-    height: 24px;
-    width: 24px;
-
-    svg {
-        fill: $color-light-grey;
-    }
-}
-.resume__remove-icon:hover {
-    svg {
-        fill: #fff;
-    }
+.resume__field {
+    @include row();
 }
 
-.resume__sidebar {
-    background: $color-light-grey;
-    border-radius: 0.5em;
-    margin-bottom: 1.0em;
-    padding: 0.5em;
+.resume__field-name {
+    color: #999;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-bottom: 1.0em;
 
     @include span-columns(12);
 
     @include media ($tablet-portrait) {
+        text-align: right;
         @include span-columns(3);
     }
     @include media ($tablet-landscape) {
+        text-align: right;
         @include span-columns(3);
     }
     @include media ($desktop) {
+        text-align: right;
         @include span-columns(3);
     }
-
-    select {
-        background: $color-light url(../images/dropdown.png) 95% 50% no-repeat;
-    }
 }
 
-
-.resume__skills-btn {
-    @include outer-container(100%);
-}
-
-.resume__skill {
-    background: $color-light-grey;
-    border: 1px solid $color-green;
-    border-radius: 0.25em;
-    margin: 0.25em 0;
-    padding: 0.5em 1.0em;
-}
-
-.resume__skills-inputs {
-    @include outer-container(100%);
-}
-.resume__skills-input {
+.resume__field-input {
     @include span-columns(12);
 
     @include media ($tablet-portrait) {
-        @include span-columns(6);
-        @include omega(2n);
+        @include span-columns(9);
     }
     @include media ($tablet-landscape) {
-        @include span-columns(6);
-        @include omega(2n);
+        @include span-columns(9);
     }
     @include media ($desktop) {
-        @include span-columns(6);
-        @include omega(2n);
+        @include span-columns(9);
     }
-}
-.resume__skills-btn {
-    @include outer-container(100%);
-}
 
-.resume__skill-level-Beginner {
-    background: $color-teal;
-}
-.resume__skill-level-Intermediate {
-    background: mix($color-teal, #000, 85%);
-}
-.resume__skill-level-Expert {
-    background: mix($color-teal, #000, 70%);
-}
-
-.resume__work {
-    background: $color-light-grey;
+    input, select, textarea {
+        margin-top: 0;
+    }
 }
